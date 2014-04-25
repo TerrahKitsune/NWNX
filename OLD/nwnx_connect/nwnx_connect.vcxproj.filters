@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="NWSERVER">
+      <UniqueIdentifier>{4ca1370e-6bfb-4af9-834e-bcb4f1a146dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\NWSERVER\CAutoMap.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CCodeBase.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CCombatinformation.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoArrayList.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoArrayList_2.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoArrayList_uint16.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoLinkedList.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoLinkedListHeader.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoLinkedListNode.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoLocString.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoLocString2.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoResMan.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CExoString.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CFactionManager.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CGameEffect.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CGameObject_VTable.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CGameObjectArray.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CGameObjectArrayElement.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CGenericObject.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CItemRepository.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CLastUpdateObject.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CLookupTableObject.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNetLayer.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWBaseItem.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWBaseItemArray.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWCCMessageData.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWClass.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWMessage.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWRules.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSAction.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSArea.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSAreaOfEffectObject.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSClient.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCombatAttackData.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCombatRound.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCreature.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCreature_vtable.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCreatureAppearanceInfo.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCreatureClass.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCreatureEventHandler.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSCreatureStats.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSDoor.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSEncounter.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSFaction.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSInventory.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSItem.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSItemProperty.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSItemPropertyHandler.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSMessage.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSModule.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSObject.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSObjectActionNode.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSpell.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSpellArray.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSPlaceable.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSPlayer.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSPlayerCharSheetGUI.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSPlayerTURD.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSScriptVarTable.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSSoundObject.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSStats_Level.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSStats_Spell.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSStore.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSTile.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSTrigger.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWSWaypoint.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWTile.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWTlkTable.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CNWVisibilityNode.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\combat_modes.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CResFileInfo.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CResGFF.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CResource.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CResRef.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CResStruct.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CScriptEvent.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CScriptLocation.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CScriptVariable.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CServerAIMaster.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CServerExoApp.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CServerExoAppInternal.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CTlkTable.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CTwoDimArrays.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CVirtualMachine.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CVirtualmachineCommands.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CWorldTimer.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\nwn_const.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\nwn_const_feats.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\nwn_effects.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\nwn_internals.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\nwnx_funcs_const.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\nwnx_memory.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\types.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\Vector.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\_CExoLocString.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\_CExoLocStringElement.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\_CNWSDoor.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\_ExoString.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\C2DA.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWSERVER\CAppManager.h">
+      <Filter>NWSERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="NWNXConnect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWNXdll\IniFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NWNXdll\NWNXBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\NWSERVER\CExoLinkedList.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CExoLocString.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CExoResMan.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CExoString.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CFactionManager.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CGameEffect.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CGameObjectArray.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CItemRepository.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CLastUpdateObject.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNetLayer.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWBaseItemArray.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWCCMessageData.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWClass.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWMessage.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWRules.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSArea.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSAreaOfEffectObject.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSCombatRound.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSCreature.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSCreatureStats.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSDoor.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSEncounter.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSFaction.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSInventory.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSItem.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSMessage.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSModule.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSObject.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSpellArray.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSPlaceable.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSPlayer.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSPlayerCharSheetGUI.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSplayerTURD.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSScriptVarTable.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSStats_Level.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSStore.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSTile.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWSTrigger.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CNWTile.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CResGFF.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CResRef.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CScriptEvent.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CServerAIMaster.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CServerExoApp.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CServerExoAppInternal.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CTlkTable.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CTwoDimArrays.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CVirtualMachine.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CWorldTimer.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\nwn_internals.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\nwnx_memory.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\_ExoString.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\C2DA.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWSERVER\CAutoMap.cpp">
+      <Filter>NWSERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NWNXConnect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWNXdll\IniFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NWNXdll\NWNXBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,25 @@
+﻿Build started 2013-07-27 16:16:28.
+     1>Project "\\terrahnet\Terra\nwnx\NWNXdll\NWNXdll.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D NWNXDLL_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc110.pdb" /Gd /TP /analyze- /errorReport:prompt HashTable.cpp IniFile.cpp NWNXBase.cpp NWNXdll.cpp
+         HashTable.cpp
+         IniFile.cpp
+         NWNXBase.cpp
+         NWNXdll.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D NDEBUG /D _VC80_UPGRADE=0x0600 /l"0x0407" /nologo /fo".\Release\NWNXdll.res" NWNXdll.rc 
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(1137,5): warning MSB8012: TargetPath(\\terrahnet\Terra\nwnx\NWNXdll\.\Release\NWNXdll.dll) does not match the Linker's OutputFile property value (\\terrahnet\Terra\nwnx\NWNXdll\Release\nwnx-module.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(1139,5): warning MSB8012: TargetName(NWNXdll) does not match the Linker's OutputFile property value (nwnx-module). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release/nwnx-module.dll" /INCREMENTAL:NO /NOLOGO odbc32.lib odbccp32.lib madCHook.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\Release/nwnx-module.pdb" /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Release/nwnx-module.lib" /MACHINE:X86 /SAFESEH /DLL .\Release\NWNXdll.res
+         .\Release/HashTable.obj
+         .\Release/IniFile.obj
+         .\Release/NWNXBase.obj
+         .\Release/NWNXdll.obj
+         NWNXdll.vcxproj -> \\terrahnet\Terra\nwnx\NWNXdll\.\Release\NWNXdll.dll
+     1>Done Building Project "\\terrahnet\Terra\nwnx\NWNXdll\NWNXdll.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.84

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/nwnx2-win32/!svn/ver/87/trunk/NWNXdll
+END
+StdAfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/StdAfx.h
+END
+HashTable.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/HashTable.h
+END
+NWNXdll.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/nwnx2-win32/!svn/ver/87/trunk/NWNXdll/NWNXdll.vcproj
+END
+odbc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/odbc.cpp
+END
+NWNXdll.rc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/nwnx2-win32/!svn/ver/24/trunk/NWNXdll/NWNXdll.rc
+END
+madCHook.lib
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/madCHook.lib
+END
+odbc.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/odbc.h
+END
+IniFile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/IniFile.cpp
+END
+IniFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/IniFile.h
+END
+NWNXBase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/nwnx2-win32/!svn/ver/65/trunk/NWNXdll/NWNXBase.cpp
+END
+NWNXdll.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/nwnx2-win32/!svn/ver/64/trunk/NWNXdll/NWNXdll.cpp
+END
+StdAfx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/StdAfx.cpp
+END
+NWNXBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/nwnx2-win32/!svn/ver/65/trunk/NWNXdll/NWNXBase.h
+END
+NWNXdll.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/nwnx2-win32/!svn/ver/24/trunk/NWNXdll/NWNXdll.dsp
+END
+madCHook.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/madCHook.h
+END
+HashTable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/HashTable.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/nwnx2-win32/!svn/ver/1/trunk/NWNXdll/resource.h
+END

@@ -1,0 +1,24 @@
+﻿Build started 2014-04-16 17:17:39.
+     1>Project "D:\Media\Skydrive\Offentligt\nwnx\nwnx_random\nwnx_random.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\NWNXdll\IniFile.cpp ..\NWNXdll\NWNXBase.cpp CNWNXRand.cpp main.cpp RandomOrg.cpp
+         RandomOrg.cpp
+     1>d:\media\skydrive\offentligt\nwnx\nwnx_random\randomorg.cpp(7): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>d:\media\skydrive\offentligt\nwnx\nwnx_random\randomorg.cpp(395): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+         main.cpp
+         CNWNXRand.cpp
+         NWNXBase.cpp
+         IniFile.cpp
+         Generating Code...
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Media\Skydrive\Offentligt\nwnx\Debug\nwnx_random.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Media\Skydrive\Offentligt\nwnx\Debug\nwnx_random.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Media\Skydrive\Offentligt\nwnx\Debug\nwnx_random.lib" /MACHINE:X86 /DLL Debug\IniFile.obj
+         Debug\NWNXBase.obj
+         Debug\CNWNXRand.obj
+         Debug\main.obj
+         Debug\RandomOrg.obj
+     1>LINK : fatal error LNK1104: cannot open file 'madChook.lib'
+     1>Done Building Project "D:\Media\Skydrive\Offentligt\nwnx\nwnx_random\nwnx_random.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.89

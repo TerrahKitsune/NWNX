@@ -1,0 +1,10 @@
+﻿Build started 2013-09-12 21:09:18.
+     1>Project "\\terrahnet\Terra\nwnx\nwnx_areas\nwnx_areas.vcxproj" on node 2 (ClCompile target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHs /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt NWNXAreas.cpp
+         NWNXAreas.cpp
+     1>Done Building Project "\\terrahnet\Terra\nwnx\nwnx_areas\nwnx_areas.vcxproj" (ClCompile target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.13

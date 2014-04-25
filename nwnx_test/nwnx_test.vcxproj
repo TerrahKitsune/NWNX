@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{427BBA10-7618-4489-980D-928141741A3A}</ProjectGuid>
+    <RootNamespace>nwnx_test</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\NWNXdll\IniFile.cpp" />
+    <ClCompile Include="..\NWNXdll\NWNXBase.cpp" />
+    <ClCompile Include="..\NWSERVER\C2DA.cpp" />
+    <ClCompile Include="..\NWSERVER\CAutoMap.cpp" />
+    <ClCompile Include="..\NWSERVER\CExoLinkedList.cpp" />
+    <ClCompile Include="..\NWSERVER\CExoLocString.cpp" />
+    <ClCompile Include="..\NWSERVER\CExoResMan.cpp" />
+    <ClCompile Include="..\NWSERVER\CExoString.cpp" />
+    <ClCompile Include="..\NWSERVER\CFactionManager.cpp" />
+    <ClCompile Include="..\NWSERVER\CGameEffect.cpp" />
+    <ClCompile Include="..\NWSERVER\CGameObjectArray.cpp" />
+    <ClCompile Include="..\NWSERVER\CItemRepository.cpp" />
+    <ClCompile Include="..\NWSERVER\CLastUpdateObject.cpp" />
+    <ClCompile Include="..\NWSERVER\CNetLayer.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWBaseItemArray.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWCCMessageData.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWClass.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWMessage.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWRules.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSArea.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSAreaOfEffectObject.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSCombatRound.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSCreature.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSCreatureStats.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSDoor.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSEncounter.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSFaction.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSInventory.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSItem.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSMessage.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSModule.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSObject.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSpellArray.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSPlaceable.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSPlayer.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSPlayerCharSheetGUI.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSplayerTURD.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSScriptVarTable.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSStats_Level.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSStore.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSTile.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWSTrigger.cpp" />
+    <ClCompile Include="..\NWSERVER\CNWTile.cpp" />
+    <ClCompile Include="..\NWSERVER\CResGFF.cpp" />
+    <ClCompile Include="..\NWSERVER\CResRef.cpp" />
+    <ClCompile Include="..\NWSERVER\CScriptEvent.cpp" />
+    <ClCompile Include="..\NWSERVER\CServerAIMaster.cpp" />
+    <ClCompile Include="..\NWSERVER\CServerExoApp.cpp" />
+    <ClCompile Include="..\NWSERVER\CServerExoAppInternal.cpp" />
+    <ClCompile Include="..\NWSERVER\CTlkTable.cpp" />
+    <ClCompile Include="..\NWSERVER\CTwoDimArrays.cpp" />
+    <ClCompile Include="..\NWSERVER\CVirtualMachine.cpp" />
+    <ClCompile Include="..\NWSERVER\CWorldTimer.cpp" />
+    <ClCompile Include="..\NWSERVER\nwnx_memory.cpp" />
+    <ClCompile Include="..\NWSERVER\nwn_internals.cpp" />
+    <ClCompile Include="..\NWSERVER\_ExoString.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="NWNXTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\NWNXdll\IniFile.h" />
+    <ClInclude Include="..\NWNXdll\NWNXBase.h" />
+    <ClInclude Include="..\NWSERVER\C2DA.h" />
+    <ClInclude Include="..\NWSERVER\CAppManager.h" />
+    <ClInclude Include="..\NWSERVER\CAutoMap.h" />
+    <ClInclude Include="..\NWSERVER\CCodeBase.h" />
+    <ClInclude Include="..\NWSERVER\CCombatinformation.h" />
+    <ClInclude Include="..\NWSERVER\CExoArrayList.h" />
+    <ClInclude Include="..\NWSERVER\CExoArrayList_2.h" />
+    <ClInclude Include="..\NWSERVER\CExoArrayList_uint16.h" />
+    <ClInclude Include="..\NWSERVER\CExoLinkedList.h" />
+    <ClInclude Include="..\NWSERVER\CExoLinkedListHeader.h" />
+    <ClInclude Include="..\NWSERVER\CExoLinkedListNode.h" />
+    <ClInclude Include="..\NWSERVER\CExoLocString.h" />
+    <ClInclude Include="..\NWSERVER\CExoLocString2.h" />
+    <ClInclude Include="..\NWSERVER\CExoResMan.h" />
+    <ClInclude Include="..\NWSERVER\CExoString.h" />
+    <ClInclude Include="..\NWSERVER\CFactionManager.h" />
+    <ClInclude Include="..\NWSERVER\CGameEffect.h" />
+    <ClInclude Include="..\NWSERVER\CGameObjectArray.h" />
+    <ClInclude Include="..\NWSERVER\CGameObjectArrayElement.h" />
+    <ClInclude Include="..\NWSERVER\CGameObject_VTable.h" />
+    <ClInclude Include="..\NWSERVER\CGenericObject.h" />
+    <ClInclude Include="..\NWSERVER\CItemRepository.h" />
+    <ClInclude Include="..\NWSERVER\CLastUpdateObject.h" />
+    <ClInclude Include="..\NWSERVER\CLookupTableObject.h" />
+    <ClInclude Include="..\NWSERVER\CNetLayer.h" />
+    <ClInclude Include="..\NWSERVER\CNWBaseItem.h" />
+    <ClInclude Include="..\NWSERVER\CNWBaseItemArray.h" />
+    <ClInclude Include="..\NWSERVER\CNWCCMessageData.h" />
+    <ClInclude Include="..\NWSERVER\CNWClass.h" />
+    <ClInclude Include="..\NWSERVER\CNWMessage.h" />
+    <ClInclude Include="..\NWSERVER\CNWRules.h" />
+    <ClInclude Include="..\NWSERVER\CNWSAction.h" />
+    <ClInclude Include="..\NWSERVER\CNWSArea.h" />
+    <ClInclude Include="..\NWSERVER\CNWSAreaOfEffectObject.h" />
+    <ClInclude Include="..\NWSERVER\CNWSClient.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCombatAttackData.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCombatRound.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCreature.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCreatureAppearanceInfo.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCreatureClass.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCreatureEventHandler.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCreatureStats.h" />
+    <ClInclude Include="..\NWSERVER\CNWSCreature_vtable.h" />
+    <ClInclude Include="..\NWSERVER\CNWSDoor.h" />
+    <ClInclude Include="..\NWSERVER\CNWSEncounter.h" />
+    <ClInclude Include="..\NWSERVER\CNWSFaction.h" />
+    <ClInclude Include="..\NWSERVER\CNWSInventory.h" />
+    <ClInclude Include="..\NWSERVER\CNWSItem.h" />
+    <ClInclude Include="..\NWSERVER\CNWSItemProperty.h" />
+    <ClInclude Include="..\NWSERVER\CNWSItemPropertyHandler.h" />
+    <ClInclude Include="..\NWSERVER\CNWSMessage.h" />
+    <ClInclude Include="..\NWSERVER\CNWSModule.h" />
+    <ClInclude Include="..\NWSERVER\CNWSObject.h" />
+    <ClInclude Include="..\NWSERVER\CNWSObjectActionNode.h" />
+    <ClInclude Include="..\NWSERVER\CNWSpell.h" />
+    <ClInclude Include="..\NWSERVER\CNWSpellArray.h" />
+    <ClInclude Include="..\NWSERVER\CNWSPlaceable.h" />
+    <ClInclude Include="..\NWSERVER\CNWSPlayer.h" />
+    <ClInclude Include="..\NWSERVER\CNWSPlayerCharSheetGUI.h" />
+    <ClInclude Include="..\NWSERVER\CNWSPlayerTURD.h" />
+    <ClInclude Include="..\NWSERVER\CNWSScriptVarTable.h" />
+    <ClInclude Include="..\NWSERVER\CNWSSoundObject.h" />
+    <ClInclude Include="..\NWSERVER\CNWSStats_Level.h" />
+    <ClInclude Include="..\NWSERVER\CNWSStats_Spell.h" />
+    <ClInclude Include="..\NWSERVER\CNWSStore.h" />
+    <ClInclude Include="..\NWSERVER\CNWSTile.h" />
+    <ClInclude Include="..\NWSERVER\CNWSTrigger.h" />
+    <ClInclude Include="..\NWSERVER\CNWSWaypoint.h" />
+    <ClInclude Include="..\NWSERVER\CNWTile.h" />
+    <ClInclude Include="..\NWSERVER\CNWTlkTable.h" />
+    <ClInclude Include="..\NWSERVER\CNWVisibilityNode.h" />
+    <ClInclude Include="..\NWSERVER\combat_modes.h" />
+    <ClInclude Include="..\NWSERVER\CResFileInfo.h" />
+    <ClInclude Include="..\NWSERVER\CResGFF.h" />
+    <ClInclude Include="..\NWSERVER\CResource.h" />
+    <ClInclude Include="..\NWSERVER\CResRef.h" />
+    <ClInclude Include="..\NWSERVER\CResStruct.h" />
+    <ClInclude Include="..\NWSERVER\CScriptEvent.h" />
+    <ClInclude Include="..\NWSERVER\CScriptLocation.h" />
+    <ClInclude Include="..\NWSERVER\CScriptVariable.h" />
+    <ClInclude Include="..\NWSERVER\CServerAIMaster.h" />
+    <ClInclude Include="..\NWSERVER\CServerExoApp.h" />
+    <ClInclude Include="..\NWSERVER\CServerExoAppInternal.h" />
+    <ClInclude Include="..\NWSERVER\CTlkTable.h" />
+    <ClInclude Include="..\NWSERVER\CTwoDimArrays.h" />
+    <ClInclude Include="..\NWSERVER\CVirtualMachine.h" />
+    <ClInclude Include="..\NWSERVER\CVirtualmachineCommands.h" />
+    <ClInclude Include="..\NWSERVER\CWorldTimer.h" />
+    <ClInclude Include="..\NWSERVER\nwnx_funcs_const.h" />
+    <ClInclude Include="..\NWSERVER\nwnx_memory.h" />
+    <ClInclude Include="..\NWSERVER\nwn_const.h" />
+    <ClInclude Include="..\NWSERVER\nwn_const_feats.h" />
+    <ClInclude Include="..\NWSERVER\nwn_effects.h" />
+    <ClInclude Include="..\NWSERVER\nwn_internals.h" />
+    <ClInclude Include="..\NWSERVER\types.h" />
+    <ClInclude Include="..\NWSERVER\Vector.h" />
+    <ClInclude Include="..\NWSERVER\_CExoLocString.h" />
+    <ClInclude Include="..\NWSERVER\_CExoLocStringElement.h" />
+    <ClInclude Include="..\NWSERVER\_CNWSDoor.h" />
+    <ClInclude Include="..\NWSERVER\_ExoString.h" />
+    <ClInclude Include="NWNXTest.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

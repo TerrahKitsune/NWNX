@@ -1,0 +1,24 @@
+﻿Build started 2013-09-19 06:26:12.
+     1>Project "\\terrahnet\Terra\nwnx\nwnx_stackdump\nwnx_stackdump.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _WINDLL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\NWNXdll\IniFile.cpp ..\NWNXdll\NWNXBase.cpp main.cpp NWNXStack.cpp StackWalker.cpp
+         IniFile.cpp
+         NWNXBase.cpp
+         main.cpp
+         NWNXStack.cpp
+         StackWalker.cpp
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\terrahnet\Terra\nwnx\Release\nwnx_stackdump.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\terrahnet\Terra\nwnx\Release\nwnx_stackdump.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\terrahnet\Terra\nwnx\Release\nwnx_stackdump.lib" /MACHINE:X86 /SAFESEH /DLL Release\IniFile.obj
+         Release\NWNXBase.obj
+         Release\main.obj
+         Release\NWNXStack.obj
+         Release\StackWalker.obj
+            Creating library \\terrahnet\Terra\nwnx\Release\nwnx_stackdump.lib and object \\terrahnet\Terra\nwnx\Release\nwnx_stackdump.exp
+         Generating code
+         Finished generating code
+         nwnx_stackdump.vcxproj -> \\terrahnet\Terra\nwnx\Release\nwnx_stackdump.dll
+     1>Done Building Project "\\terrahnet\Terra\nwnx\nwnx_stackdump\nwnx_stackdump.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.47

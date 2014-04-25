@@ -1,0 +1,11 @@
+#ifndef _H_CRESREF_H_
+#define _H_CRESREF_H_
+
+struct CResRef_s {
+	char resref[16];
+	
+	CResRef * CResRef(CExoString const &Ref);
+	CResRef_s * Set( const char * text );	
+}; 
+
+#endif;

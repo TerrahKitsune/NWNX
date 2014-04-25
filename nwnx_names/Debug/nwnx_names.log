@@ -1,0 +1,157 @@
+﻿Build started 2013-05-11 14:51:22.
+     1>Project "\\WIN-KFA83IN6U8N\Terra\nwnx\nwnx_names\nwnx_names.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CustomNames.cpp Hooks.cpp NWNXNames.cpp main.cpp
+         CustomNames.cpp
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\customnames.cpp(43): warning C4018: '<=' : signed/unsigned mismatch
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\customnames.cpp(73): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\customnames.cpp(86): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+         Generating Code...
+         Compiling...
+         main.cpp
+         NWNXNames.cpp
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(32): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(69): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(76): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'vsprintf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(117): warning C4018: '<' : signed/unsigned mismatch
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(159): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(167): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(176): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(196): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(217): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(225): warning C4018: '<' : signed/unsigned mismatch
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(241): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : see declaration of 'strncpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(316): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : see declaration of 'strncpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(330): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(336): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(341): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(345): warning C4018: '<' : signed/unsigned mismatch
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(354): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(357): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(383): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(387): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(393): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(400): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(404): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(413): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(417): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(422): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(430): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(447): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(455): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(462): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(464): warning C4018: '<' : signed/unsigned mismatch
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(485): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(495): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : see declaration of 'strncpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(499): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(512): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(524): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\nwnxnames.cpp(569): warning C4018: '<=' : signed/unsigned mismatch
+         Hooks.cpp
+     1>\\win-kfa83in6u8n\terra\nwnx\nwnx_names\hooks.cpp(37): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : see declaration of 'strncpy'
+         Generating Code...
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\WIN-KFA83IN6U8N\Terra\nwnx\Debug\nwnx_names.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\WIN-KFA83IN6U8N\Terra\nwnx\Debug\nwnx_names.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\WIN-KFA83IN6U8N\Terra\nwnx\Debug\nwnx_names.lib" /MACHINE:X86 /DLL Debug\IniFile.obj
+         Debug\NWNXBase.obj
+         Debug\C2DA.obj
+         Debug\CAutoMap.obj
+         Debug\CExoLinkedList.obj
+         Debug\CExoLocString.obj
+         Debug\CExoResMan.obj
+         Debug\CExoString.obj
+         Debug\CFactionManager.obj
+         Debug\CGameEffect.obj
+         Debug\CGameObjectArray.obj
+         Debug\CItemRepository.obj
+         Debug\CLastUpdateObject.obj
+         Debug\CNetLayer.obj
+         Debug\CNWBaseItemArray.obj
+         Debug\CNWCCMessageData.obj
+         Debug\CNWClass.obj
+         Debug\CNWMessage.obj
+         Debug\CNWRules.obj
+         Debug\CNWSArea.obj
+         Debug\CNWSAreaOfEffectObject.obj
+         Debug\CNWSCombatRound.obj
+         Debug\CNWSCreature.obj
+         Debug\CNWSCreatureStats.obj
+         Debug\CNWSDoor.obj
+         Debug\CNWSEncounter.obj
+         Debug\CNWSFaction.obj
+         Debug\CNWSInventory.obj
+         Debug\CNWSItem.obj
+         Debug\CNWSMessage.obj
+         Debug\CNWSModule.obj
+         Debug\CNWSObject.obj
+         Debug\CNWSpellArray.obj
+         Debug\CNWSPlaceable.obj
+         Debug\CNWSPlayer.obj
+         Debug\CNWSPlayerCharSheetGUI.obj
+         Debug\CNWSplayerTURD.obj
+         Debug\CNWSScriptVarTable.obj
+         Debug\CNWSStats_Level.obj
+         Debug\CNWSStore.obj
+         Debug\CNWSTile.obj
+         Debug\CNWSTrigger.obj
+         Debug\CNWTile.obj
+         Debug\CResGFF.obj
+         Debug\CResRef.obj
+         Debug\CScriptEvent.obj
+         Debug\CServerAIMaster.obj
+         Debug\CServerExoApp.obj
+         Debug\CServerExoAppInternal.obj
+         Debug\CTlkTable.obj
+         Debug\CTwoDimArrays.obj
+         Debug\CVirtualMachine.obj
+         Debug\CWorldTimer.obj
+         Debug\nwnx_memory.obj
+         Debug\nwn_internals.obj
+         Debug\_ExoString.obj
+         Debug\CustomNames.obj
+         Debug\Hooks.obj
+         Debug\main.obj
+         Debug\NWNXNames.obj
+         Debug\nwnx_memory.obj
+     1>Debug\nwnx_memory.obj : warning LNK4042: object specified more than once; extras ignored
+            Creating library \\WIN-KFA83IN6U8N\Terra\nwnx\Debug\nwnx_names.lib and object \\WIN-KFA83IN6U8N\Terra\nwnx\Debug\nwnx_names.exp
+         nwnx_names.vcxproj -> \\WIN-KFA83IN6U8N\Terra\nwnx\Debug\nwnx_names.dll
+     1>Done Building Project "\\WIN-KFA83IN6U8N\Terra\nwnx\nwnx_names\nwnx_names.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.55
