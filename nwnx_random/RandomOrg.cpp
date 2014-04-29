@@ -98,7 +98,7 @@ bool RandomOrg::DownloadRandom(){
 
 	if (outofquota)
 		return false;
-	else if (GetQuota() < 0){
+	else if (GetQuota() <= 0){
 		outofquota = true;
 		return false;
 	}

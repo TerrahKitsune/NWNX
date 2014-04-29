@@ -194,6 +194,20 @@ char* CNWNXRand::OnRequest(char *gameObject, char* Request, char* Parameters){
 		Log("NoReuse = %s\n", atoi(Parameters) > 0 ? "true" : "false");
 		RO->NoReuse = atoi(Parameters) > 0;
 	}
+	else if (strcmp(Request, "QUT") == 0){
+
+		if (atoi(Parameters) == 1){
+
+			Log("Quota Flag Reset\n");
+			RO->outofquota = false;
+		}
+		else{
+
+			int nQuote = RO->GetQuota();
+			sprintf(Parameters, "%d", nQuote);
+			Log("Get Quota: %d\n", nQuote);
+		}
+	}
 	return NULL;
 }
 

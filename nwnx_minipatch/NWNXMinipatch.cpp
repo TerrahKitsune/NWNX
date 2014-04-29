@@ -16,6 +16,7 @@
 
 #include "NWNXMinipatch.h"
 #include "../NWNXdll/madCHook.h"
+#include "../NWNXdll/IniFile.h"
 
 #pragma comment(lib, "madChook.lib")
 
@@ -80,20 +81,35 @@ BOOL CNWNXMinipatch::OnCreate(const char* LogDir){
 		return false;
 
 	WriteLogHeader( );
-	RemoveCopyItemAndModifyColorCap( );
-	if( HookCode( (PVOID)0x004DFA60, CNWSObject__ClearAllPartyInvalidActions, (PVOID*)&CNWSObject__ClearAllPartyInvalidActionsNext ) )
-		Log( "o Hooked ClearPartyInvalidActions!\n" );
-	else
-		Log( "! Failed to hook ClearPartyInvalidActions!\n" );
 
-	if( HookCode( (PVOID)0x004FEC40, CNWSItem__MergeItem, (PVOID*)&CNWSItem__MergeItemNext ) )
-		Log( "o Hooked MergeItem!\n" );
-	else
-		Log( "! Failed to hook MergeItem!\n" );
+	CIniFile ini("nwnx.ini");
 
-	RemoveChatListenRestrictions( );
-	RemoveSetStacksizeCap( );
+	if (ini.ReadBool("MINIPATCH","WeaponColor",true))
+		RemoveCopyItemAndModifyColorCap( );
+	
+	if (ini.ReadBool("MINIPATCH", "PartyActionQueue", true)){
+		if (HookCode((PVOID)0x004DFA60, CNWSObject__ClearAllPartyInvalidActions, (PVOID*)&CNWSObject__ClearAllPartyInvalidActionsNext))
+			Log("o Hooked ClearPartyInvalidActions!\n");
+		else
+			Log("! Failed to hook ClearPartyInvalidActions!\n");
+	}
 
+	if (ini.ReadBool("MINIPATCH", "UnlimitedMerge", true)){
+		if (HookCode((PVOID)0x004FEC40, CNWSItem__MergeItem, (PVOID*)&CNWSItem__MergeItemNext)){
+			Log("o Hooked MergeItem!\n");
+			RemoveSetStacksizeCap();
+		}
+		else
+			Log("! Failed to hook MergeItem!\n");
+	}
+
+	if (ini.ReadBool("MINIPATCH", "AllChat", true)){
+		RemoveChatListenRestrictions();
+	}
+
+	if (ini.ReadBool("MINIPATCH", "TSNoStealth", true)){
+		TrueSightNoStealth();
+	}
 	return true;
 }
 
@@ -170,6 +186,37 @@ void CNWNXMinipatch::RemoveSetStacksizeCap( void ){
 	VirtualProtect( func, 4, privs, NULL );
 
 	Log( "o Removed SetStackSize cap!\n" );
+}
+
+void CNWNXMinipatch::TrueSightNoStealth(){
+
+	DWORD privs;
+	unsigned char * func = (unsigned char*)0x004A02BD;
+
+	VirtualProtect(func, 3, PAGE_EXECUTE_READWRITE, &privs);
+
+	func[0] = 0x90;
+	func[1] = 0x90;
+	func[2] = 0x90;
+
+	VirtualProtect(func, 3, privs, NULL);
+
+	func = (unsigned char*)0x004A0379;
+
+	VirtualProtect(func, 8, PAGE_EXECUTE_READWRITE, &privs);
+
+	func[0] = 0x90;
+	func[1] = 0x90;
+	func[2] = 0x90;
+	func[3] = 0x90;
+	func[4] = 0x90;
+	func[5] = 0x90;
+	func[6] = 0x90;
+	func[7] = 0x90;
+
+	VirtualProtect(func, 8, privs, NULL);
+
+	Log("o TrueSightNoStealth: Trueseeing no longer detects stealth!\n");
 }
 
 void CNWNXMinipatch::RemoveChatListenRestrictions( ){

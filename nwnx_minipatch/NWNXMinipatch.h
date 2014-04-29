@@ -39,6 +39,7 @@ public:
 	void RepointMalloc( void );
 	void RemoveChatListenRestrictions( );
 	void RemoveSetStacksizeCap( void );
+	void TrueSightNoStealth();
 
 protected:
 

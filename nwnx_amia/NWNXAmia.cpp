@@ -79,7 +79,7 @@ BOOL CNWNXAmia::OnCreate(const char* LogDir){
 
 void CNWNXAmia::WriteLogHeader( ){
 
-	fprintf( m_fFile, "NWNXAmia v1.2\n\n" );
+	fprintf( m_fFile, "NWNXAmia v1.3\n\n" );
 	fflush( m_fFile );	
 }
 
