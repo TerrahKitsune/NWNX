@@ -18,6 +18,15 @@ float AREAS_GetHeight( location lLoc );
 //Get the number of players in the area
 int AREAS_GetPlayers( object oArea );
 
+//Forces the server to send area updates to DMs
+//as well as fixing minimap data on existing creatures
+void AREAS_Update( );
+
+void AREAS_Update( ){
+    SetLocalString( OBJECT_SELF, "NWNX!AREAS!COMMIT", ".........." );
+    DeleteLocalString( OBJECT_SELF, "NWNX!AREAS!COMMIT" );
+}
+
 int AREAS_GetPlayers( object oArea ){
 
     SetLocalString( oArea, "NWNX!AREAS!GET_PLAY", ".........." );
@@ -64,3 +73,4 @@ int AREAS_DestroyArea( object oArea ){
     DeleteLocalString( OBJECT_SELF, "NWNX!AREAS!DESTROY_AREA" );
     return n;
 }
+

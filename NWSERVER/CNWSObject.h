@@ -157,6 +157,7 @@ CNWSArea *AsNWSArea();
 CNWSStore *AsNWSStore();
 
 
+
 int16_t				ApplyEffect(CGameEffect *Effect, int a3, int a4);
 void *				BroadcastDialog(CExoString Msg, float Max_Distance);
 void 				ClearSpellEffectsOnOthers();
@@ -176,7 +177,7 @@ void 				SetPosition(Vector v, int a3);
 void 				SetTag(CExoString sTag);
 void 				SaveVarTable(CResGFF *pResGFF, CResStruct *pResStruct);
 int					RemoveEffect( CGameEffect * eff );
-
+CScriptLocation *   GetScriptLocation(CScriptLocation * in);
 
 
 };

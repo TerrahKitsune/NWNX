@@ -1,3 +1,11 @@
+/*
+
+First time this plugin runs it'll create a config file called weaponconfiguration.txt in root.
+This file is used to set the default behavior of weapons, see the logfile on formatting!
+
+*/
+
+
 const int WEAPON_TYPE_FINESSABLE = 0;
 const int WEAPON_TYPE_UNARMEDBASEATTACK = 1;
 const int WEAPON_TYPE_WEAPONFOCUS = 2;

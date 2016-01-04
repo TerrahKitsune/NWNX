@@ -34,6 +34,23 @@ int DATA_CloseSQLite( string sSQLiteFile );
 //nSet should be true or false
 void DATA_SetLogging( int nSet );
 
+//Save an object to a file. This only works on items and creatures.
+//Path should be the full path along with filename.
+//Extension will be set automaticly, .bic for creatures and .uti for items.
+int DATA_SaveToFile( object oObject, string sPath );
+
+//Retrive an uti file or bicfile, sFile should be the full path
+//Items will attempt spawning in oTargets inventory otherwise its created on lTarget
+object DATA_GetFromFile( string sFile, object oTarget, location lTarget );
+
+object DATA_GetFromFile( string sFile, object oTarget, location lTarget ){
+    return RetrieveCampaignObject( "DATA", sFile, lTarget, oTarget );
+}
+
+int DATA_SaveToFile( object oObject, string sPath ){
+    return StoreCampaignObject( "DATA", sPath, oObject );
+}
+
 void DATA_SetLogging( int nSet ){
 
     SetLocalString( OBJECT_SELF, "NWNX!DATA!7", IntToString( nSet ) );

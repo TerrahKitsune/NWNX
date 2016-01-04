@@ -53,7 +53,12 @@ int (__thiscall *CNWSCreatureStats__GetRangedAttackBonus)( CNWSCreatureStats *pT
 
 int16_t (__thiscall *CNWSCreatureStats__GetDamageRoll)(CNWSCreatureStats *pTHIS, CNWSObject *Defender, int bOffHand, int AttackResult, int SneakAttack, int DeathAttack, int a7) = (int16_t (__thiscall*)(CNWSCreatureStats *pTHIS, CNWSObject *Defender, int bOffHand, int AttackResult, int SneakAttack, int DeathAttack, int a7))0x004764D0;
 
+void(__thiscall *CNWSCreatureStats__RemoveFeat)(CNWSCreatureStats *pTHIS, uint16_t Feat) = (void(__thiscall *)(CNWSCreatureStats *pTHIS, uint16_t Feat))0x00480280;
 
+void CNWSCreatureStats_s::RemoveFeat(uint16_t Feat){
+
+	CNWSCreatureStats__RemoveFeat(this, Feat);
+}
 
 int CNWSCreatureStats_s::GetRangedAttackBonus( int arg1, int arg2 ){
 

@@ -122,6 +122,7 @@
     <ClCompile Include="..\NWSERVER\_ExoString.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NWNXMinipatch.cpp" />
+    <ClCompile Include="nwnx_memory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\NWNXdll\IniFile.h" />
@@ -227,6 +228,7 @@
     <ClInclude Include="..\NWSERVER\_CNWSDoor.h" />
     <ClInclude Include="..\NWSERVER\_ExoString.h" />
     <ClInclude Include="NWNXMinipatch.h" />
+    <ClInclude Include="nwnx_memory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,7 @@
 #define _H_CNWTILE_H_
 
 struct CNWTile_s {
-	void *data;
+	BYTE data[88];
 	
 	void GetLocation(int *a2, int *a3);
 };

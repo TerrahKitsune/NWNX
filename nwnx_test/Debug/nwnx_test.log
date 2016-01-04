@@ -1,10 +1,5 @@
-﻿Build started 2013-05-11 14:57:52.
-     1>Project "\\WIN-KFA83IN6U8N\Terra\nwnx\nwnx_test\nwnx_test.vcxproj" on node 2 (ClCompile target(s)).
-     1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt NWNXTest.cpp
-         NWNXTest.cpp
-     1>Done Building Project "\\WIN-KFA83IN6U8N\Terra\nwnx\nwnx_test\nwnx_test.vcxproj" (ClCompile target(s)).
+﻿Build started 2015-09-26 14:32:33.
 
 Build succeeded.
 
-Time Elapsed 00:00:02.25
+Time Elapsed 00:00:00.02

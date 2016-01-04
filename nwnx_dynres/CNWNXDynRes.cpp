@@ -18,64 +18,9 @@
 #include "../NWNXdll/IniFile.h"
 #include <stdio.h>
 #include <math.h>
+#include <list>
 
 extern CNWNXDynRes DynRes;
-
-int _stdcall DeleteLLEntry( LinkedList::LLEntry * etry ){
-
-	if( etry->data )DynRes.mem.nwnx_free( etry->data );
-	free( etry );
-
-	return 0;
-}
-
-int _stdcall DeleteAreEntry( LinkedList::LLEntry * etry ){
-
-	if( etry->data )DynRes.mem.nwnx_free( etry->data );
-	free( etry );
-
-	return 0;
-}
-
-int _stdcall DeleteFileEntry( BinaryTree::BTEntry * etry ){
-
-	CNWNXMemory mem;
-	FileEntry * FE = (FileEntry *)etry->data;
-
-	if( strstr( FE->file, ".are" ) ){
-		
-		LinkedList::LLEntry * node = DynRes.AreaList->GetFirst( true,false);
-		while( node ){
-
-			if( strcmp( FE->file, (char*)node->data )==0 ){
-
-				DynRes.AreaList->Delete();
-				break;
-			}
-				
-			node = DynRes.AreaList->GetNext();
-		}
-
-	}
-
-	if( FE ){
-	
-		if( FE->file )mem.nwnx_free( FE->file );
-		if( FE->fullpath )mem.nwnx_free( FE->fullpath );
-
-		if( FE->Version==1 && FE->ERFOffset > 0 ){
-
-			mem.nwnx_free( (void*)FE->ERFOffset );
-			FE->Version=0;
-		}
-
-		free( FE );
-	}
-
-	free( etry );
-
-	return 0;
-}
 
 int _stdcall FileScanProc( CFileManager * pThis, const char * file ){
 
@@ -96,7 +41,7 @@ int _stdcall FileScanProc( CFileManager * pThis, const char * file ){
 		if( !Break )
 			return 0;
 
-		FileEntry * FE = (FileEntry *)calloc( 1, sizeof( FileEntry ) );
+		FileEntry * FE = new FileEntry();
 		
 		if( !FE ){
 			DynRes.Log( "! Failed to allocate linked list entry: %s\n", file ); 
@@ -121,11 +66,8 @@ int _stdcall FileScanProc( CFileManager * pThis, const char * file ){
 				fflush( DynRes.LoadList );
 			}
 
-			if( FE->file )		 
-				DynRes.mem.nwnx_free( FE->file );
-			if( FE->fullpath )	
-				DynRes.mem.nwnx_free( FE->fullpath );
-			free( FE );
+			delete FE;
+
 			return 0;
 		}
 		else if( strstr( FE->file, ".mod" ) || 
@@ -133,30 +75,33 @@ int _stdcall FileScanProc( CFileManager * pThis, const char * file ){
 				strstr( FE->file, ".hak" ) || 
 				strstr( FE->file, ".nwm" ) ){
 
-			DynRes.ERFList->Add( strlen( FE->fullpath ), FE->fullpath );
+			DynRes.CapsuleList[FE->fullpath] = strlen(FE->fullpath);
 
 			if( DynRes.LoadList ){
 				fprintf( DynRes.LoadList, "CAPSULE: %s -> %s\n", FE->fullpath, FE->file );
 				fflush( DynRes.LoadList );
 			}
 
-			if( FE->file )		 
-				DynRes.mem.nwnx_free( FE->file );
+			delete FE;
 
-			free( FE );
 			return 0;
 		}
 
 		FE->Version = pThis->FileTimeToUnixTime( &pThis->GetCurrentFileData()->ftLastWriteTime );
+		
+		bool ok = true;
 
-		if( DynRes.FileLL->Add( ID, sizeof( FileEntry ), FE ) ){
+		try{
+			DynRes.FileList[FE] = ID;
+		}
+		catch (std::bad_alloc){
+			ok = false;
+		}
+
+		if (ok){
 	
 			if( DynRes.AddToAreaListCheck( FE->file ) ){
-
-				DWORD arel = strlen( FE->file );
-				char * are = (char*)DynRes.mem.nwnx_malloc( arel+1 );
-				strcpy( are, FE->file );
-				DynRes.AreaList->Add( arel, are );
+				FE->IsArea = true;
 			}
 
 			if(  DynRes.LoadList ){
@@ -222,15 +167,15 @@ DWORD CNWNXDynRes::AddCapsuleToList( const char * fullFile ){
 		for( int i=0;i<16;i++ ){
 			if( key->ResRef[i] == '\0' )
 				break;
-			ResRef[i]=key->ResRef[i];
+			ResRef[i]=tolower(key->ResRef[i]);
 		}
 		strcat( ResRef, ext );
 
-		BinaryTree::BTEntry * f = Find( ResRef );
+		FileEntry * f = Find( ResRef );
 
 		if( f ){
 
-			if( ((FileEntry*)f->data)->Version == 1 ){
+			if( f->Version == 1 ){
 
 				if( DynRes.LoadList ){
 
@@ -248,7 +193,7 @@ DWORD CNWNXDynRes::AddCapsuleToList( const char * fullFile ){
 			continue;
 		}
 
-		FE = (FileEntry *)calloc( 1, sizeof( FileEntry ) );
+		FE = new FileEntry();
 
 		if( !FE ){
 
@@ -265,9 +210,7 @@ DWORD CNWNXDynRes::AddCapsuleToList( const char * fullFile ){
 
 		if( !FE->file || !FE->fullpath ){
 
-			if( FE->file )mem.nwnx_free( FE->file );
-			if( FE->fullpath )mem.nwnx_free( FE->fullpath );
-			free( FE );
+			delete FE;
 			delete ori;
 			delete capsule;
 			return cnt;
@@ -276,16 +219,22 @@ DWORD CNWNXDynRes::AddCapsuleToList( const char * fullFile ){
 		strcpy( FE->file, ResRef );
 		strcpy( FE->fullpath, fullFile );
 
-		if( FileLL->Add( CalculateID( FE->file ), sizeof( FileEntry ), FE ) ){
+		bool ok = true;
+
+		try{
+			DynRes.FileList[FE] = CalculateID(FE->file);
+		}
+		catch (std::bad_alloc){
+			ok = false;
+		}
+
+		if (ok){
 
 			cnt++;
 
 			if( DynRes.AddToAreaListCheck( FE->file ) ){
 
-				DWORD arel = strlen( FE->file );
-				char * are = (char*)DynRes.mem.nwnx_malloc( arel+1 );
-				strcpy( are, FE->file );
-				DynRes.AreaList->Add( arel, are );
+				FE->IsArea = true;
 			}
 
 			if( DynRes.LoadList ){
@@ -332,30 +281,27 @@ int CNWNXDynRes::ScanFolder( const char * folder ){
 
 	FM.RunForeach( &FileScanProc, folder, 1 );
 
-	int n = FileLL->GetSize( );
+	size_t n = GetFileListSize();
 
 	DWORD cnt = 0;
 	DWORD total = 0;
-	LinkedList::LLEntry * node = ERFList->GetFirst( true, false );
-	while( node ){
+	for (std::map<char *, size_t>::iterator it = CapsuleList.begin(); it != CapsuleList.end(); ++it){
 
 		if( DynRes.LoadList ){
 
-			fprintf( DynRes.LoadList, "COMPUTING CAPSULE: %s\n", (char*)node->data );
+			fprintf( DynRes.LoadList, "COMPUTING CAPSULE: %s\n", it->first );
 			fflush( DynRes.LoadList );
 		}
-		cnt = AddCapsuleToList( (char*)node->data );
+		cnt = AddCapsuleToList(it->first);
 		total+=cnt;
 		if( DynRes.LoadList ){
 
-			fprintf( DynRes.LoadList, "CAPSULE COMPUTED: %s %u ENTRIES\n", (char*)node->data, cnt );
+			fprintf(DynRes.LoadList, "CAPSULE COMPUTED: %s %u ENTRIES\n", it->first, cnt);
 			fflush( DynRes.LoadList );
 		}
-
-		node = ERFList->GetNext( );
 	}
 
-	Log( "o Scanned (%s): %i files!\n", folder, n );
+	Log( "o Scanned (%s): %u files!\n", folder, n );
 	Log( "o Scanned (%s): %u encapsuled files!\n", folder, total );
 
 	return n;
@@ -365,9 +311,6 @@ BOOL CNWNXDynRes::OnRelease( ){
 
 	DumpResFile( );
 
-	delete FileLL;
-	delete ERFList;
-	delete AreaList;
 	delete filter;
 
 	return CNWNXBase::OnRelease();
@@ -399,11 +342,11 @@ BOOL CNWNXDynRes::OnCreate(const char* LogDir){
 	LastExists=NULL;
 	ERFCurrent=NULL;
 	filter = new char[512];
-	FileLL = new BinaryTree( &DeleteFileEntry );
-	ERFList = new LinkedList( &DeleteLLEntry );
-	AreaList = new LinkedList( &DeleteAreEntry );
 
-	if( !FileLL || !ERFList || !AreaList || !filter )
+	FirstNext = FileList.begin();
+	AreaIterator = FileList.begin();
+
+	if( !filter )
 		return false;
 
 	CIniFile ini( "nwnx.ini" );
@@ -448,7 +391,7 @@ BOOL CNWNXDynRes::OnCreate(const char* LogDir){
 
 void CNWNXDynRes::WriteLogHeader( ){
 
-	fprintf( m_fFile, "NWNXDynRes v1.66 created by Terra_777\n\n" );
+	fprintf( m_fFile, "NWNXDynRes v1.83 created by Terra_777\n\n" );
 	fprintf( m_fFile, "Log level: %i\n", logz );
 	fprintf( m_fFile, "ResMan: %08X\n", NWN_ResMan );
 	fprintf( m_fFile, "Load List: %s\n\n", LoadList ? "ON" : "OFF" );
@@ -510,9 +453,10 @@ char* CNWNXDynRes::OnRequest(char *gameObject, char* Request, char* Parameters){
 
 	if( strcmp( Request, "NXT" ) == 0 ){
 	
-		BinaryTree::BTEntry * node = FileLL->GetNext();
-		if( node )
-			sprintf( Parameters, "%s", ((FileEntry*)node->data)->file );
+		FirstNext++;
+
+		if (FirstNext!=FileList.end())
+			sprintf( Parameters, "%s", FirstNext->first->file );
 		else
 			Parameters[0]='\0';
 	}
@@ -536,9 +480,9 @@ char* CNWNXDynRes::OnRequest(char *gameObject, char* Request, char* Parameters){
 	}
 	else if( strcmp( Request, "FST" ) == 0 ){
 
-		BinaryTree::BTEntry * node = FileLL->GetFirst( 1 );
-		if( node )
-			sprintf( Parameters, "%s", ((FileEntry*)node->data)->file );
+		FirstNext = FileList.begin();
+		if (FirstNext!=FileList.end())
+			sprintf(Parameters, "%s", FirstNext->first->file);
 		else
 			Parameters[0]='\0';
 	}
@@ -564,6 +508,27 @@ char* CNWNXDynRes::OnRequest(char *gameObject, char* Request, char* Parameters){
 	else if( strcmp( Request, "EXT" ) == 0 ){
 		ExtractFromCapsule( Parameters );
 	}
+	else if (strcmp(Request, "RAW") == 0){
+
+		unsigned long len;
+		FileEntry * eFile = GetExternalFileToLoad(Parameters);
+		if (eFile){
+
+			char * file = (char*)LoadFile(eFile, &len);
+			if (!file){
+				return NULL;
+			}
+			else if (file[len - 1] != '\0'){
+				char * temp = (char*)mem.nwnx_malloc(len+1);
+				memcpy(temp,file,len);
+				temp[len] = '\0';
+				mem.nwnx_free(file);
+				file = temp;
+			}
+
+			return file;
+		}
+	}
 	else{
 		Log( "! Function %s not found!\n", Request );
 	}
@@ -574,42 +539,43 @@ char* CNWNXDynRes::OnRequest(char *gameObject, char* Request, char* Parameters){
 --Patch functions
 ----------------*/
 
-int CNWNXDynRes::CacheFile( const char * file ){
+size_t CNWNXDynRes::GetFileListSize(){
+
+	size_t cnt = 0;
+
+	for (std::map<FileEntry*, DWORD>::iterator it = DynRes.FileList.begin(); it != DynRes.FileList.end(); ++it){
+		cnt++;
+	}
+
+	return cnt;
+}
+
+int CNWNXDynRes::CacheFile( const char * file, bool dolog ){
 
 
 	int nRet = 0;
 	FileEntry * eFile = GetExternalFileToLoad( file );
 
-	if( eFile ){
+	if (eFile){
 
-		void * data;
+		if (eFile->cache){
 
-		if( eFile->Version == 1 ){
-
-			data = (void*)eFile->ERFOffset;	
-			mem.nwnx_free( data );
-			
-			eFile->ERFOffset=0;
-			eFile->Version=0;
-			eFile->ERFSize=0;
+			mem.nwnx_free(eFile->cache);
+			eFile->cachesize = 0;
 		}
 
-		unsigned long len = 0;
-		data = DynRes.LoadFile( eFile, &len );		
-
-		if( data ){
-
-			eFile->Version=1;
-			eFile->ERFSize=len;
-			eFile->ERFOffset=(DWORD)data;			
-			nRet=1;
-		}
+		eFile->cache = DynRes.LoadFile(eFile, &eFile->cachesize);
+		if (eFile->cache)
+			nRet = 1;
 	}
 
-	if( nRet == 0 )
-		Log( "o NWScript unable to cache %s\n", file );
-	else
-		Log( "o NWScript cached: %s from %s\n", eFile->file, eFile->fullpath );
+	if (dolog){
+
+		if (nRet == 0)
+			Log("o NWScript unable to cache %s\n", file);
+		else
+			Log("o NWScript cached: %s from %s\n", eFile->file, eFile->fullpath);
+	}
 
 	return nRet;
 }
@@ -686,30 +652,85 @@ void * CNWNXDynRes::SetResEngienData( CRes * res, void * data, unsigned int size
 
 FileEntry * CNWNXDynRes::GetExternalFileToLoad( const char * file ){
 	
-	BinaryTree::BTEntry * node = Find( file );
-	if( node )
-		return (FileEntry*)node->data;
-	return NULL;
+	return Find(file);
+}
+
+long CNWNXDynRes::GetFileSize(const char * fullFile){
+	FILE *p_file = NULL;
+	p_file = fopen(fullFile, "rb");
+	if (!p_file)
+		return 0;
+	fseek(p_file, 0, SEEK_END);
+	long size = ftell(p_file);
+	fclose(p_file);
+	return size;
 }
 
 DWORD CNWNXDynRes::RecomputeCapsule( const char * fullFile ){
 
-	BinaryTree::BTEntry * node = FileLL->GetFirst( 1, NULL );
-	while( node ){
+	std::list<char*> cachelist;
+	char * test;
 
-		if( ((FileEntry*)node->data)->Version != 1 && strcmp( ((FileEntry*)node->data)->fullpath, fullFile ) == 0 ){
+	for (std::map<FileEntry*, DWORD>::iterator it = DynRes.FileList.begin(); it != DynRes.FileList.end(); ++it){
 
-			FileLL->DeleteNode( node );
-			node = FileLL->GetFirst( 1, NULL );
-			continue;
+		if (it->first->Version != 1 && strcmp(it->first->fullpath, fullFile) == 0 ){
+			
+			if (it->first->cache){
+				test = new char[strlen(it->first->file)+1];
+				strcpy(test, it->first->file);
+				cachelist.push_back(test);
+			}
+
+			if (it->first)
+				delete it->first;
+
+			it = FileList.erase(it);		
 		}
-		node = FileLL->GetNext( );
 	}
 
-	return AddCapsuleToList( fullFile );
+	//wait until system done writing
+	time_t current = GetFileSize(fullFile);
+	time_t now;
+	Sleep(100);
+	now = GetFileSize(fullFile);
+
+	while (current != now){
+		current = now;
+		Sleep(100);
+		now = GetFileSize(fullFile);
+	}
+
+	DWORD cnt = AddCapsuleToList(fullFile);
+	std::list<char*>::iterator it;
+	
+
+	if (cnt>0){
+
+		for (it = cachelist.begin(); it != cachelist.end(); ++it){
+			test = *it;
+			CacheFile(test,false);
+			delete[]test;
+			*it = NULL;
+		}
+	}
+	else{
+
+		for (it = cachelist.begin(); it != cachelist.end(); ++it){
+			test = *it;
+			delete[]test;
+			*it = NULL;
+		}
+	}
+
+	cachelist.clear();
+
+	return cnt;
 }
 
 void * CNWNXDynRes::LoadFile( FileEntry * file, unsigned long * uLen ){
+
+	if (!file || !file->fullpath)
+		return NULL;
 
 	if( file->Version == 1 ){
 
@@ -822,24 +843,24 @@ bool CNWNXDynRes::AddFile( char* Parameters ){
 	if( !fullfile )
 		return false;
 
+	char * node= NULL;
+
 	if( strstr( Parameters, ".mod" ) || 
 		strstr( Parameters, ".erf" ) ||
 		strstr( Parameters, ".hak" ) || 
 		strstr( Parameters, ".nwm" ) ){
 
-		LinkedList::LLEntry * node = ERFList->GetFirst( true, false );
-		while( node ){
+		for (std::map<char *, size_t>::iterator it = CapsuleList.begin(); it != CapsuleList.end(); ++it){
 
-			if( strcmp( fullfile, (char*)node->data )==0 ){
+			if( strcmp( fullfile, it->first )==0 ){
+				node = it->first;
 				break;
 			}
-
-			node = ERFList->GetNext( );
 		}
 
 		if( node ){
 
-			DeleteCapsule( (char*)node->data );
+			DeleteCapsule( node );
 		}
 		else{
 
@@ -847,7 +868,7 @@ bool CNWNXDynRes::AddFile( char* Parameters ){
 			char * st = (char*)mem.nwnx_malloc( len+1 );
 			strcpy( st, fullfile );
 
-			ERFList->Add( len, st );
+			CapsuleList[st] = len;
 		}
 
 		if( DynRes.LoadList ){
@@ -861,13 +882,14 @@ bool CNWNXDynRes::AddFile( char* Parameters ){
 		return AddCapsuleToList( fullfile ) > 0;
 	}
 	
-	BinaryTree::BTEntry * node = Find( Parameters );
-	if( node ){
+	FileEntry * fnode = Find( Parameters );
 
-		FileLL->DeleteNode( node );
+	if (fnode){
+		delete fnode;
+		FileList.erase(fnode);
 	}
 
-	FileEntry * FE = (FileEntry *)calloc( 1, sizeof( FileEntry ) );
+	FileEntry * FE = new FileEntry();
 		
 	if( !FE )
 		return false;
@@ -963,13 +985,18 @@ bool CNWNXDynRes::AddFile( char* Parameters ){
 		
 	DWORD ID=DynRes.CalculateID( FE->file );
 
-	if( DynRes.FileLL->Add( ID, sizeof( FileEntry ), FE )  ){
+	bool ok = true;
+	try{
+		FileList[FE] = ID;
+	}
+	catch (std::bad_alloc){
+		ok = false;
+	}
+
+	if (ok){
 
 		if( AddToAreaListCheck( FE->file ) ){
-			DWORD arel = strlen( FE->file );
-			char * are = (char*)DynRes.mem.nwnx_malloc( arel+1 );
-			strcpy( are, FE->file );
-			DynRes.AreaList->Add( arel, are );
+			FE->IsArea = true;
 		}
 
 		if( DynRes.LoadList ){
@@ -989,30 +1016,17 @@ bool CNWNXDynRes::AddToAreaListCheck( const char * file ){
 		return false;
 	}
 
-	LinkedList::LLEntry * node = AreaList->GetFirst( true,false);
-	while( node ){
-
-		if( strcmp( file, (char*)node->data )==0 )
-			return false;
-
-		node = AreaList->GetNext();
-	}
-
 	return true;
 }
 
-BinaryTree::BTEntry * CNWNXDynRes::Find( const char * file ){
+FileEntry * CNWNXDynRes::Find( const char * file ){
 	
 	DWORD ID = CalculateID( file );
-	BinaryTree::BTEntry * node = FileLL->Find( ID, NULL, false );
-	while( node ){
-
-		if( strcmp( ((FileEntry*)node->data)->file, file ) == 0 ){
-
-			return node;
-		}
-
-		node = FileLL->Find( ID, node, true );
+	
+	for (std::map<FileEntry*, DWORD>::iterator it = FileList.begin(); it != FileList.end(); ++it){
+	
+		if (it->second == ID && strcmp(it->first->file, file) == 0)
+			return it->first;
 	}
 
 	return NULL;
@@ -1020,12 +1034,12 @@ BinaryTree::BTEntry * CNWNXDynRes::Find( const char * file ){
 
 bool CNWNXDynRes::Exists( char* Parameters ){
 
-	BinaryTree::BTEntry * node = Find( Parameters );
+	FileEntry * node = Find( Parameters );
 	
 	if( node ){
 
-		Log( "o NWScript Exists: %s (%u): %s\n", ((FileEntry*)node->data)->file, node->nID, ((FileEntry*)node->data)->fullpath );
-		strcpy( Parameters, ((FileEntry*)node->data)->fullpath );
+		Log("o NWScript Exists: %s: %s\n", node->file, node->fullpath);
+		strcpy( Parameters, node->fullpath );
 		return true;
 	}
 	return false;
@@ -1034,17 +1048,15 @@ bool CNWNXDynRes::Exists( char* Parameters ){
 DWORD CNWNXDynRes::DeleteCapsule( const char * fullFile ){
 
 	DWORD deleted=0;
-	BinaryTree::BTEntry * node = FileLL->GetFirst( 1, NULL );
-	while( node ){
 
-		if( strcmp( ((FileEntry*)node->data)->fullpath, fullFile ) == 0 ){
+	for (std::map<FileEntry*, DWORD>::iterator it = FileList.begin(); it != FileList.end(); ++it){
 
-			FileLL->DeleteNode( node );
-			node = FileLL->GetFirst( 1, NULL );
+		if( strcmp( it->first->fullpath, fullFile ) == 0 ){
+
+			delete it->first;
+			it = FileList.erase(it);
 			deleted++;
-			continue;
 		}
-		node = FileLL->GetNext( );
 	}
 
 	return deleted;
@@ -1061,15 +1073,15 @@ bool CNWNXDynRes::RemoveFile( char* Parameters ){
 		if( !test )
 			return false;
 		sprintf( test, "%c%s", '\\',Parameters );
-		LinkedList::LLEntry * node = ERFList->GetFirst( true, false );
-		while( node ){
 
-			if( strstr( (char*)node->data, test ) ){
+		char * node = NULL;
 
+		for (std::map<char *, size_t>::iterator it = CapsuleList.begin(); it != CapsuleList.end(); ++it){
+
+			if( strstr( it->first, test ) ){
+				node = it->first;
 				break;
 			}
-
-			node = ERFList->GetNext();
 		}
 
 		mem.nwnx_free( test );
@@ -1077,20 +1089,21 @@ bool CNWNXDynRes::RemoveFile( char* Parameters ){
 		if( !node )
 			return false;
 
-		DWORD cnt = DeleteCapsule( (char*)node->data );
+		DWORD cnt = DeleteCapsule(test);
 		
-		Log( "o NWScript Remove Capsule: %s: %u\n", (char*)node->data, cnt );
+		Log("o NWScript Remove Capsule: %s: %u\n", test, cnt);
 
-		ERFList->Delete();
+		CapsuleList.erase(test);
 
 		return cnt > 0; 
 	}
 
-	BinaryTree::BTEntry * node = Find( Parameters );
+	FileEntry * node = Find( Parameters );
 	if( node ){
 
-		Log( "o NWScript Remove: %s (%u): %s\n", ((FileEntry*)node->data)->file, node->nID, ((FileEntry*)node->data)->fullpath );
-		FileLL->DeleteNode( node );
+		Log( "o NWScript Remove: %s: %s\n", node->file, node->fullpath );
+		delete node;
+		FileList.erase(node);
 		return true;
 	}
 
@@ -1121,22 +1134,21 @@ void CNWNXDynRes::DumpResFile( ){
 	}
 
 	fprintf( LoadList, "\n\nTimes loaded:\n\n" );
-	if( !FileLL ){
+	if (GetFileListSize()<=0){
 		fprintf( LoadList, "File loadlist doesnt exist\n" );
 		fflush( LoadList );
 		return;
 	}
 
-	BinaryTree::BTEntry * node = FileLL->GetFirst( 1 );
 	unsigned long long int Total = 0;
 	unsigned int ResCnt = 0;
 	unsigned int ResCntUsed = 0;
 	unsigned int Missing = 0;
 	unsigned int NeverUsed = 0;
 
-	while( node ){
+	for (std::map<FileEntry*, DWORD>::iterator it = DynRes.FileList.begin(); it != DynRes.FileList.end(); ++it){
 
-		FileEntry * FE = (FileEntry *)node->data;
+		FileEntry * FE = it->first;
 
 		if( FE->LoadTimes == 0xFFFFFFFF ){
 			fprintf( LoadList, "%s: MISSING\n", FE->file );
@@ -1154,8 +1166,6 @@ void CNWNXDynRes::DumpResFile( ){
 		ResCnt++;
 
 		fflush( LoadList );
-
-		node = FileLL->GetNext( );
 	}
 	
 	double dtotal,dpercentage;
@@ -1209,18 +1219,28 @@ time_t CNWNXDynRes::GetLastWriteTime( const char * file ){
 
 void CNWNXDynRes::GetFirstNextArea( char * param ){
 
-	LinkedList::LLEntry * node;
+	FileEntry * node = NULL;
 
-	if( atoi( param ) > 0 ){
-		node = AreaList->GetFirst( true, false );
+	if (atoi(param) > 0){
+		AreaIterator = FileList.begin();
 	}
-	else{
-		node = AreaList->GetNext();
+	else
+		AreaIterator++;
+	
+	while (AreaIterator!=FileList.end()){
+
+		if (AreaIterator->first->IsArea){
+			node = AreaIterator->first;
+			break;
+		}
+		else{
+			AreaIterator++;
+		}
 	}
 
 	if( node ){
 
-		strcpy( param, (char*)node->data );
+		strcpy( param, node->file );
 		char * dot = strstr( param, "." );
 		if( dot )
 			*dot='\0';

@@ -16,6 +16,7 @@ struct CExoLinkedListHeader
 	CExoLinkedListElement *LastElement;
 	uint32_t              Count;
 	
+
 };
 
 class CExoLinkedList_s {

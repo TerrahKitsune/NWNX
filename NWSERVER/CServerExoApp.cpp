@@ -14,6 +14,13 @@ CServerAIMaster*	(__thiscall *CServerExoApp__GetServerAIMaster)(CServerExoApp *p
 nwn_objid_t			(__thiscall *CServerExoApp__GetFirstPCObject)(CServerExoApp * pThis) = (nwn_objid_t (__thiscall*)(CServerExoApp *))0x0042D250;
 nwn_objid_t			(__thiscall *CServerExoApp__GetNextPCObject)(CServerExoApp * pThis) = (nwn_objid_t (__thiscall*)(CServerExoApp *))0x0042D260;
 
+
+CWorldTimer*(__thiscall * CServerExoApp__GetWorldTimer)(CServerExoApp * pThis) = (CWorldTimer*(__thiscall*)(CServerExoApp *))0x0042C990;
+
+CWorldTimer* CServerExoApp_s::GetWorldTimer(){
+	return CServerExoApp__GetWorldTimer(this);
+}
+
 CNWSPlayer *CServerExoApp_s::GetClientObjectByObjectId(nwn_objid_t oID) {
 	return CServerExoApp__GetClientObjectByObjectId(this, oID);
 }

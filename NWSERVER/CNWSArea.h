@@ -88,7 +88,7 @@ struct CNWSArea_s {
     uint32_t                    transition_list_alloc; //168
 
 void Destructor();
-void CNWSArea(CResRef, int, unsigned long);
+void * CNWSArea(CResRef, int, unsigned long);
     
 signed int 	AddObjectToArea(unsigned int Object_ID, int bRunEnterScript);
 int 		ClearLineOfSight(Vector v1, Vector v2, Vector *v3, uint32_t *, nwn_objid_t, nwn_objid_t, uint8_t);

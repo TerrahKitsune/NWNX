@@ -27,6 +27,11 @@ int 		(__thiscall *CNWSMessage__SendServerToPlayerCCMessage)(CNWSMessage *pTHIS,
 
 int 		(__thiscall *CNWSMessage__SendServerToPlayerArea_ClientArea)(CNWSMessage *pTHIS, CNWSPlayer_s *Player, CNWSArea *Area, Vector Pos, Vector *Rot, int a8) = (int(__thiscall*)(CNWSMessage *pTHIS, CNWSPlayer_s *Player, CNWSArea *Area, Vector Pos, Vector *Rot, int a8))0x00439EB0;
 int 		(__thiscall *CNWSMessage__SendServerToPlayerModule_Info)(CNWSMessage *pTHIS, uint32_t PlayerID) = (int(__thiscall*)(CNWSMessage *pTHIS, uint32_t PlayerID))0x00449FF0;
+int			(__thiscall *CNWSMessage__SendServerToPlayerPlayerList_All)(CNWSMessage *pTHIS, CNWSPlayer *player) = (int (__thiscall*)(CNWSMessage *pTHIS, CNWSPlayer *player))0x0044A4C0;
+
+int CNWSMessage_s::SendServerToPlayerPlayerList_All(CNWSPlayer *player){
+	return CNWSMessage__SendServerToPlayerPlayerList_All(this, player);
+}
 
 nwn_objid_t CNWSMessage_s::ReadOBJECTIDServer() {
 	return CNWSMessage__ReadOBJECTIDServer(this);

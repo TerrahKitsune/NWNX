@@ -72,6 +72,17 @@ string DYNRES_GetNextFileInCapsule( );
 //Returns true/false
 int DYNRES_ExtractFromCapsule( string sFile, string sCapsule, string sNewFile );
 
+//sFile: resref+extension IE: "script.lua"
+//Returns the raw contents of a cached file
+string DYNRES_GetRaw( string sFile );
+
+string DYNRES_GetRaw( string sFile ){
+    SetLocalString( OBJECT_SELF, "NWNX!DYNRES!RAW", sFile );
+    string nRet = GetLocalString( OBJECT_SELF, "NWNX!DYNRES!RAW" );
+    DeleteLocalString( OBJECT_SELF, "NWNX!DYNRES!RAW" );
+    return nRet;
+}
+
 int DYNRES_ExtractFromCapsule( string sFile, string sCapsule, string sNewFile ){
 
     SetLocalString( OBJECT_SELF, "NWNX!DYNRES!EXT", sFile+"|"+sCapsule+"|"+sNewFile );

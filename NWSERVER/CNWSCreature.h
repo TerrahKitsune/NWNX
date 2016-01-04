@@ -434,10 +434,10 @@ struct CNWSCreature_s {
 	uint8_t 								spacer2_434;    /* 0x0 */
 	uint8_t 								spacer2_435;    /* 0x0 */
 	uint8_t 								spacer2_436;    /* 0x0 */
-	uint8_t 								spacer2_437;    /* 0x0 */
-	uint8_t 								spacer2_438;    /* 0x0 */
-	uint8_t 								spacer2_439;    /* 0x0 */
-	uint8_t 								spacer2_440;    /* 0x0 */
+	//uint8_t 								spacer2_437;    /* 0x0 */
+	//uint8_t 								spacer2_438;    /* 0x0 */
+	//uint8_t 								spacer2_439;    /* 0x0 */
+	//uint8_t 								spacer2_440;    /* 0x0 */
 	CCreatureMaps							AreaData;
 //	void								**cre_areaminimaps;    /* 0x048C */
 //	nwn_objid_t							*cre_arealist;    /* 0x0490 */
@@ -1036,7 +1036,12 @@ struct CNWSCreature_s {
 
 	CNWSCreature_s(int a2, unsigned int a3, unsigned int a4);
 	~CNWSCreature_s();
-	
+
+	void				RemoveAssociate(nwn_objid_t target);
+	void				PossessCreatureDM(nwn_objid_t target, unsigned __int8 associate);
+	void				UnpossessCreatureDM();
+	__int16				SetAssociateType(__int16 type);
+	int					AddAttackActions(nwn_objid_t oID, int arg1, int arg2, int arg3);
 	void				RemoveToAssociateList( nwn_objid_t oID );
 	int					ReprocessAssociateList( );
 	void				UpdatePersonalSpace( );
@@ -1097,7 +1102,7 @@ struct CNWSCreature_s {
 	int					AddToVisibleList( nwn_objid_t obj, int a1, int a2, unsigned char a3, int a4 );
 	void				RemoveFromVisibleList( nwn_objid_t obj );
 	//void				Destructor(char c);
-	
+	bool				IsDM();
 	void SetAutoMapData(int a2, int a3, int a4);
 };
 #endif /* _NX_NWN_STRUCT_CNWSCREATURE_ */

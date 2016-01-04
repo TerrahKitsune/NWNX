@@ -41,7 +41,7 @@ BOOL CNWNXMagic::OnCreate(const char* LogDir){
 	//CIniFile iniFile ("nwnx.ini");
 	ISNWSERVER = true;//iniFile.ReadBool( "MAGIC", "IsServer", false );
 
-	//RemoveSpellLikeLevelCap( );
+	RemoveSpellLikeLevelCap( );
 
 	return true;
 }
@@ -87,24 +87,14 @@ void CNWNXMagic::Log( const char * formatting, ... ){
 
 void CNWNXMagic::RemoveSpellLikeLevelCap( void ){
 
-	DWORD Addr = 0x00488DDC;
+	DWORD privs;
+	unsigned char * func = (unsigned char*)0x00488DDF;
 
-	if( Addr == NULL ){
-		Log( "o RemoveSpellLikeLevelCap: unable to find address!\n" );
-		return;
-	}
-	
-	DWORD DefaultPrivs;
-	unsigned char * func = (unsigned char*)Addr;
+	VirtualProtect(func, 1, PAGE_EXECUTE_READWRITE, &privs);
 
-	//Make the memoryspace writeable
-	VirtualProtect( func, 2, PAGE_EXECUTE_READWRITE, &DefaultPrivs );
-	
-	func[0]=0xEB;
-	func[1]=0x48;
+	func[0] = 0xEB;
 
-	//Restore the privs back to default
-	VirtualProtect( func, 2, DefaultPrivs, NULL );
+	VirtualProtect(func, 1, privs, NULL);
 }
 
 /*----------------
@@ -525,7 +515,7 @@ int CNWNXMagic::EmptySpellBook( CNWSCreature * cre, char * input ){
 
 	NWNXSpellBook * Spells = (NWNXSpellBook*)&cre->cre_stats->cs_classes[nClass].cl_spells_mem[nLevel];
 
-	if( Spells->Alloc == 0 || Spells->Len == 0 )
+	if (!Spells || Spells->Alloc == 0 || Spells->Len == 0)
 		return 0;
 
 	Spells->EmptySpellbook( EatChargesOnly );

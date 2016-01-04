@@ -109,6 +109,7 @@ struct CServerExoAppInternal_s {
     uint32_t                   field_10154;            /* 10154 */
     uint32_t                   field_10158;            /* 10158 */
 
+	CNWSWaypoint *			GetWaypointByGameObjectID(nwn_objid_t oID);
 	CNWSArea * 				GetAreaByGameObjectID(nwn_objid_t oID);
 	CNWSAreaOfEffectObject*	GetAreaOfEffectByGameObjectID(nwn_objid_t oID);
 	CNWSCreature*			GetCreatureByGameObjectID(nwn_objid_t oID);

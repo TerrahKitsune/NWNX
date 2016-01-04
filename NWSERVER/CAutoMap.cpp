@@ -7,9 +7,10 @@ CMiniMapData **CCreatureMaps::ResizeMapList(int NewSize) {
 	
 	CMiniMapData **p = (CMiniMapData **)mem.nwnx_malloc( sizeof( CMiniMapData*)*NewSize );	
 
-	for (unsigned int i=0; i<this->MiniMapCount; i++) {
-		p[i] = this->MiniMap[i];
-	}
+	memcpy(p, this->MiniMap, this->MiniMapCount);
+
+	p[this->MiniMapCount] = NULL;
+
 	mem.nwnx_free( this->MiniMap );
 
 	return p;
@@ -68,9 +69,19 @@ void CCreatureMaps::DeleteAreas() {
 	AreaCount = 0;
 }
 
-void CCreatureMaps::AddArea(unsigned areaid) {
-	MiniMap = ResizeMapList(MiniMapCount+1);
+int CCreatureMaps::IndexOf(nwn_objid_t area){
+	return CExoArrayList_uint32_contains((CExoArrayList_uint32*)&Areas, area);
+}
 
+bool CCreatureMaps::Exists(nwn_objid_t areaid){
+	int iIndex = CExoArrayList_uint32_contains((CExoArrayList_uint32*)&Areas, areaid);
+	return iIndex != -1;
+}
+
+void CCreatureMaps::AddArea(unsigned areaid) {
+
+	MiniMap = ResizeMapList(MiniMapCount+1);
+	
 	CNWNXMemory mem;
 
 	MiniMap[MiniMapCount] = (CMiniMapData*)mem.nwnx_malloc( sizeof( CMiniMapData ) );
@@ -82,28 +93,10 @@ void CCreatureMaps::AddArea(unsigned areaid) {
 }
 
 
-void CCreatureMaps::RemoveArea(unsigned areaid) {
+void CCreatureMaps::RemoveArea(nwn_objid_t area, int index) {
 
-	int iIndex = CExoArrayList_uint32_contains((CExoArrayList_uint32*)&Areas, areaid);
-	if (iIndex != -1) {
-
-		CNWNXMemory mem;	
-		CMiniMapData **Map = (CMiniMapData**)mem.nwnx_malloc( sizeof( unsigned ) * (MiniMapCount-1) );
-		int j=0;
-		for (unsigned int i=0; i<MiniMapCount; i++) {
-			if (i != iIndex) {
-				Map[j++] = MiniMap[i];
-			}
-			else {
-				mem.nwnx_free( MiniMap[i] );
-			}
-		}
-		mem.nwnx_free( MiniMap );
-		MiniMap = Map;
-		--MiniMapCount;
-
-		CExoArrayList_uint32___Remove(&Areas, NULL, areaid);
-	}
+	memcpy(&Areas[index], &Areas[index + 1], (AreaCount - index - 1) * 4);
+	AreaCount--;
 }
 
 CMiniMapData **CTURDMaps::Copy(CMiniMapData** CopyFrom, unsigned int nSize) {
@@ -130,6 +123,8 @@ CMiniMapData **CTURDMaps::ResizeMapList(int NewSize) {
 	}
 	mem.nwnx_free( this->MiniMap );
 
+	this->MiniMap = p;
+
 	return p;
 }
 
@@ -140,26 +135,30 @@ nwn_objid_t *CTURDMaps::CopyAreas(int NewSize) {
 	nwn_objid_t *p = (nwn_objid_t*)mem.nwnx_malloc( sizeof( nwn_objid_t ) * NewSize);
 	memcpy(p, this->Areas, this->AreaCount * 4);
 	mem.nwnx_free( this->Areas );
+	this->Areas = p;
+	this->AreaCount++;
 	return p;
 }
 
 
 void CTURDMaps::AddArea(unsigned areaid) {
-	
-	CNWNXMemory mem;
 
 	MiniMap = ResizeMapList(AreaCount+1);
+
+	CNWNXMemory mem;
+
 	MiniMap[AreaCount] = (CMiniMapData*)mem.nwnx_malloc(sizeof(CMiniMapData));
-
-	Areas = CopyAreas(AreaCount+1);
-	Areas[AreaCount] = areaid;
-
+	memset(MiniMap[AreaCount], 0, sizeof(CMiniMapData));
 	++AreaCount;
+
+	//CExoArrayList_uint32_add((CExoArrayList_uint32*)&Areas, areaid);
+	CExoArrayList_uint32___Add(&Areas, NULL, areaid);
 }
 
 void CTURDMaps::RemoveArea(unsigned areaid) {
 	if( !&Areas )return;
 	int iIndex = CExoArrayList_uint32_contains((CExoArrayList_uint32*)&Areas, areaid);
+
 	if (iIndex != -1) {
 
 		CNWNXMemory mem;
@@ -176,6 +175,7 @@ void CTURDMaps::RemoveArea(unsigned areaid) {
 		}
 		mem.nwnx_free( MiniMap );
 		MiniMap = Map;
+		
 
 		nwn_objid_t *areas = (nwn_objid_t*)mem.nwnx_malloc( sizeof( nwn_objid_t )*(AreaCount-1) );
 		j=0;
@@ -186,5 +186,6 @@ void CTURDMaps::RemoveArea(unsigned areaid) {
 		}
 		mem.nwnx_free( Areas );
 		Areas = areas;
+		AreaCount--;
 	}
 }

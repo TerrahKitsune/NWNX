@@ -51,7 +51,7 @@ void * __fastcall CNWSMessage__WriteGameObjUpdate_UpdateObject( CNWSMessage * pT
 	return ret;
 }
 
-int (__fastcall *CNWSMessage__SendServerToPlayerExamineGui_CreatureDataNext)( CNWSMessage *, void *, CNWSPlayer *, DWORD );
+int(__fastcall *CNWSMessage__SendServerToPlayerExamineGui_CreatureDataNext)(CNWSMessage *, void *, CNWSPlayer *, DWORD);
 int __fastcall CNWSMessage__SendServerToPlayerExamineGui_CreatureData( CNWSMessage * pThis, void *, CNWSPlayer * ply, DWORD arg1 ){
 
 	Names.LastID = ply->obj_id;
@@ -59,6 +59,36 @@ int __fastcall CNWSMessage__SendServerToPlayerExamineGui_CreatureData( CNWSMessa
 	Names.LastID = 0;
 
 	return ret;
+}
+
+int(__fastcall *CNWSMessage__SendServerToPlayerPlayerList_AllNext)(CNWSMessage *, void *, CNWSPlayer *ply);
+int __fastcall CNWSMessage__SendServerToPlayerPlayerList_All(CNWSMessage *, void *, CNWSPlayer *ply){
+
+	CNWMessage * nwMess = (CNWMessage *)(*NWN_AppManager)->app_server->GetNWSMessage();
+	nwMess->CreateWriteMessage(512, ply->pl_id, 1);
+	
+	CNWSPlayer * ply=NULL;
+
+	CExoLinkedList * plylist = (CExoLinkedList *)(*NWN_AppManager)->app_server->GetPlayerList();	
+	CExoLinkedListElement * node = plylist->ListHeader->FirstElement;	
+	
+	DWORD n = (*(int(**)(void))(**(DWORD **)(0x0066C050 + 4) + 84))();
+	DWORD flag = *(DWORD *)(n + 0x100);
+
+	nwMess->WriteBYTE(plylist->ListHeader->Count, 8);
+	nwMess->WriteBool(flag);
+
+	while (node){
+	
+		ply = (CNWSPlayer*)node->Data;
+		if (ply){
+			nwMess->WriteDWORD(ply->pl_id, 32);
+			
+		}
+		
+		node = node->NextElement;
+	}
+
 }
 
 void ApplyHooks( ){

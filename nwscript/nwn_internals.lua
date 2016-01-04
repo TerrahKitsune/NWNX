@@ -17,6 +17,9 @@ nwn["DeleteLocalObject"] = function (obj,var) return nwn.NWScriptFunction( "57AF
 nwn["DeleteLocalFloat"] = function (obj,var) return nwn.NWScriptFunction( "57AF90",266, 0, obj,var ); end
 nwn["GetTag"] = function (obj) return nwn.NWScriptFunction( "574CF0", 0, 0, obj ); end
 nwn["GetResref"] = function (obj) return nwn.NWScriptFunction( "589FD0", 0, 0, obj ); end
+nwn["Get2DAString"] = function (file, column, row) return nwn.NWScriptFunction( "590D10", 0, 0, file, column, row ); end
+nwn["GetStringByStrRef"] = function (strref, gender) return nwn.NWScriptFunction( "5785C0", 0, 0, strref, gender ); end
+nwn["GetPCPlayerName"] = function (obj) return nwn.NWScriptFunction( "580F60", 1, 1, obj ); end
 
 print( "Loaded: " .. nwn.GetName( nwn.GetModule( ) ) );
 for key,value in pairs(nwn) do print( tostring(key) .." " .. tostring(value)) end

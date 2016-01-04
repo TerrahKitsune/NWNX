@@ -68,9 +68,40 @@ void				(__thiscall *CNWSCreature__UpdateVisibleList)(CNWSCreature * pThis) = (v
 int					(__thiscall *CNWSCreature__AddToVisibleList)(CNWSCreature * pThis, nwn_objid_t obj, int a1, int a2, unsigned char a3, int a4) = (int (__thiscall *)(CNWSCreature * pThis, nwn_objid_t obj,int a1, int a2, unsigned char a3, int a4))0x004C7E10;
 void				(__thiscall *CNWSCreature__RemoveFromVisibleList)(CNWSCreature * pThis, nwn_objid_t obj) = (void (__thiscall *)(CNWSCreature * pThis, nwn_objid_t obj))0x004C7F80;
 
+__int16(__thiscall *CNWSCreature__SetAssociateType)(CNWSCreature * pThis, __int16 type) = (__int16(__thiscall *)(CNWSCreature *, __int16))0x004B2A40;
+
+int(__thiscall *CNWSCreature__AddAttackActions)(CNWSCreature * pThis, nwn_objid_t obj, int a1, int a2, int a3) = (int(__thiscall *)(CNWSCreature * pThis, nwn_objid_t obj, int a1, int a2, int a3))0x00493810;
+void(__thiscall *CNWSCreature__PossessCreatureDM)(CNWSCreature * pThis, nwn_objid_t target, unsigned __int8 associate) = (void(__thiscall *)(CNWSCreature *, nwn_objid_t, unsigned __int8))0x004CD3F0;
+void(__thiscall *CNWSCreature__UnpossessCreatureDM)(CNWSCreature * pThis) = (void(__thiscall *)(CNWSCreature *))0x004CD510;
+void(__thiscall *CNWSCreature__RemoveAssociate)(CNWSCreature * pThis, nwn_objid_t target) = (void(__thiscall *)(CNWSCreature *, nwn_objid_t))0x004CB7F0;
+
 //void Destructor(char c) {
 	//CNWSCreature__dtor_CNWSCreature(this, c);
 //}
+
+void	CNWSCreature_s::RemoveAssociate(nwn_objid_t target){
+	CNWSCreature__RemoveAssociate(this, target);
+}
+
+void	CNWSCreature_s::PossessCreatureDM(nwn_objid_t target, unsigned __int8 associate){
+	CNWSCreature__PossessCreatureDM(this, target, associate);
+}
+
+void	CNWSCreature_s::UnpossessCreatureDM(){
+	CNWSCreature__UnpossessCreatureDM(this);
+}
+
+__int16	CNWSCreature_s::SetAssociateType(__int16 type){
+	return CNWSCreature__SetAssociateType(this,type);
+}
+
+int	CNWSCreature_s::AddAttackActions(nwn_objid_t oID, int arg1, int arg2, int arg3){
+	return CNWSCreature__AddAttackActions(this, oID, arg1, arg2, arg3);
+}
+
+bool CNWSCreature_s::IsDM(){
+	return this->cre_stats->cs_is_dm;
+}
 
 void CNWSCreature_s::RemoveFromVisibleList( nwn_objid_t obj ){
 	return CNWSCreature__RemoveFromVisibleList( this, obj );

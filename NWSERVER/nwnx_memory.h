@@ -33,7 +33,7 @@ public:
 	//Frees memory blocks allocated by nwnx_malloc/calloc/realloc
 	void (__cdecl *nwnx_free)( void * ptr  );
 	//Allocates num*size bytes and sets all the bytes to zero
-	void * nwnx_calloc( unsigned int num, unsigned int size );
+	void * (__cdecl *nwnx_calloc)(unsigned int num, unsigned int size);
 	//Reallocates ptr into a new block of memory with size and returns a new pointer
 	//if ptr is null it behaves like malloc, if size is 0 it behaves like free
 	void * (__cdecl *nwnx_realloc)( void * ptr, unsigned int size );

@@ -73,7 +73,10 @@ int __fastcall GetCanUseMonkAbilities( CNWSCreature * pThis, void * ){
 	CNWSItem * itmHand = pThis->cre_equipment->GetItemInSlot( 32 );
 	DWORD baseItem = itmHand == NULL ? 256 : itmHand->it_baseitemtype;
 
-	return ubab.BaseTypeAllowedUbab( baseItem );
+	if (baseItem == 14 || baseItem == 56 || baseItem == 57)
+		return 0;
+
+	return 1;
 }
 
 void (__fastcall * SetCombatModeOriginal)( CNWSCreature *, void*, unsigned char, int );
@@ -186,7 +189,7 @@ BOOL CNWNXUbab::OnCreate(const char* LogDir){
 
 void CNWNXUbab::WriteLogHeader( ){
 
-	fprintf( m_fFile, "NWNXUbab v1.1\n\n" );
+	fprintf( m_fFile, "NWNXUbab v1.2\n\n" );
 	fflush( m_fFile );	
 }
 

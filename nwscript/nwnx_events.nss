@@ -1,6 +1,8 @@
 //void main(){}
 
-/* INI SETTINGS:
+/*INI SNIPPET:
+
+Corresponds to which event to fire for which event, if empty string they are disabled and never hooked
 
 [EVENTS]
 log=1
@@ -13,8 +15,8 @@ Unpolymorph="nwnx_ev_poly"
 Attack="nwnx_ev_attack"
 Togglemode="nwnx_ev_toggle"
 Devcrit="nwnx_ev_dev"
-Validate="nwnx_ev_validate"
-Removepc="nwnx_ev_rempc"
+Downloadpc="nwnx_ev_dlpc"
+Examine="nwnx_ev_examine"
 
 */
 
@@ -28,8 +30,8 @@ Removepc="nwnx_ev_rempc"
 //Attack: 0-2 unknown
 //Togglemode: 0 mode being toggled
 //Devcrit: 0 baseitem type (BASE_ITEM_INVALID if invalid)
-//Validate: 0 unknown
-//RemovePC: not used
+//Downloadpc: not used
+//Examine: 0 something about traps
 int EVENTS_GetData( int nIndex );
 
 //Returns the event thats occuring
@@ -42,8 +44,8 @@ int EVENTS_GetData( int nIndex );
 //6: Attack
 //7: Togglemode
 //8: Devcrit
-//9: Validate character
-//10: Remove PC
+//9: Downloadpc
+//10: Examine
 int EVENTS_GetEvent( );
 
 //Get the target location (if any)(type: index: data)
@@ -56,8 +58,8 @@ int EVENTS_GetEvent( );
 //Attack: not used
 //Togglemode: not used
 //Devcrit: not used
-//Validate: not used
-//RemovePC: not used
+//Downloadpc: not used
+//Examine: not used
 location EVENTS_GetTargetLocation( int nIndex );
 
 //Get string from the event (if any)
@@ -70,8 +72,8 @@ location EVENTS_GetTargetLocation( int nIndex );
 //Attack: not used
 //Togglemode: not used
 //Devcrit: not used
-//Validate: not used
-//RemovePC: not used
+//Downloadpc: not used
+//Examine: not used
 string EVENTS_GetString( int nIndex );
 
 //Get the target from the event (if any)(type: index: data)
@@ -84,14 +86,12 @@ string EVENTS_GetString( int nIndex );
 //Attack: 0 attack target
 //Togglemode: not used
 //Devcrit: 0 item used, 1 attack target
-//Validate: not used
-//RemovePC: not used
+//Downloadpc: not used
+//Examine: 0 object getting examined
 object EVENTS_GetTarget( int nIndex );
 
 //Flags the game to bypass the event, returning nReturn to it
 //Devcrit should pass 1 if standard devcrit is desired, 0 otherwise
-//RemovePC cannot be bypassed
-//Validate character should return a strref which will be shown to the PC when denied entry
 //All others should be either 0 or 1
 void EVENTS_Bypass( int nReturn=1 );
 

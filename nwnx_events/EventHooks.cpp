@@ -16,10 +16,131 @@ int (__fastcall * CNWSCreature__PolymorphNext)( CNWSCreature * cre, void*, int n
 int (__fastcall *CNWSCreature__AddAttackActionsNext)(CNWSCreature * cre, void*, unsigned long target, int nArg1, int nArg2, int nArg3 );
 int (__fastcall *CNWSCreature__ToggleModeNext)( CNWSCreature * cre, void *, unsigned char arg1 );
 int (__fastcall *CNWSCreatureStats__GetEpicWeaponDevastatingCriticalNext)( CNWSCreatureStats * cre, void*, CNWSItem * itm );
-int (__fastcall *CNWSPlayer__ValidateCharacterNext)( CNWSPlayer * ply, void*, int arg1 );
-void (__fastcall *CServerExoAppInternal__RemovePCFromWorldNext)(CServerExoAppInternal * srv, void *, CNWSPlayer * ply);
 void (__fastcall *CNWSCreature__SetStealthModeNext)(CNWSCreature * cre, void*, unsigned char bToggle);
 void (__fastcall *CNWSCreature__SetDetectModeNext)(CNWSCreature * cre, void*, unsigned char bToggle);
+int(__fastcall *CNWSPlayer__PackCreatureIntoMessageNext)(CNWSPlayer * cre, void*);
+int(__fastcall *CNWSMessage__SendServerToPlayerExamineGui_ItemDataNext)(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg);
+int(__fastcall *CNWSMessage__SendServerToPlayerExamineGui_CreatureDataNext)(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg);
+int(__fastcall *CNWSMessage__SendServerToPlayerExamineGui_PlaceableDataNext)(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg);
+int(__fastcall *CNWSMessage__SendServerToPlayerExamineGui_TrapDataNext)(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg, CNWSCreature * cre, int arg);
+int(__fastcall *CNWSMessage__SendServerToPlayerExamineGui_DoorDataNext)(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg);
+
+int __fastcall CNWSMessage__SendServerToPlayerExamineGui_DoorData(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg){
+
+	if (!ply)
+		return CNWSMessage__SendServerToPlayerExamineGui_DoorDataNext(pMess, NULL, ply, trg);
+
+	events.Log("o CNWSMessage__SendServerToPlayerExamineGui_DoorData: %08lx\nCre: %08lx\n", ply->obj_id, trg);
+
+	events.EP->EVENT = EVENT_EXAMINE;
+	events.EP->oTarget[0] = trg;
+
+	int nReturn = events.FireEvent(ply->obj_id);
+
+	if (nReturn != 0x80000000){
+		return 0;
+	}
+
+	return CNWSMessage__SendServerToPlayerExamineGui_DoorDataNext(pMess, NULL, ply, trg);
+}
+
+int __fastcall CNWSMessage__SendServerToPlayerExamineGui_TrapData(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg, CNWSCreature * cre, int arg){
+
+	if (!ply)
+		return CNWSMessage__SendServerToPlayerExamineGui_TrapDataNext(pMess, NULL, ply, trg,cre,arg);
+
+	events.Log("o CNWSMessage__SendServerToPlayerExamineGui_TrapData: %08lx\nCre: %08lx\n", ply->obj_id, trg);
+
+	events.EP->EVENT = EVENT_EXAMINE;
+	events.EP->oTarget[0] = trg;
+	if (cre)
+		events.EP->oTarget[1] = cre->obj.obj_generic.obj_id;
+	events.EP->nData[0] = arg;
+
+	int nReturn = events.FireEvent(ply->obj_id);
+
+	if (nReturn != 0x80000000){
+		return 0;
+	}
+
+	return CNWSMessage__SendServerToPlayerExamineGui_TrapDataNext(pMess, NULL, ply, trg, cre, arg);
+}
+
+int __fastcall CNWSMessage__SendServerToPlayerExamineGui_PlaceableData(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg){
+
+	if (!ply)
+		return CNWSMessage__SendServerToPlayerExamineGui_PlaceableDataNext(pMess, NULL, ply, trg);
+
+	events.Log("o CNWSMessage__SendServerToPlayerExamineGui_PlaceableData: %08lx\nCre: %08lx\n", ply->obj_id, trg);
+
+	events.EP->EVENT = EVENT_EXAMINE;
+	events.EP->oTarget[0] = trg;
+
+
+	int nReturn = events.FireEvent(ply->obj_id);
+
+	if (nReturn != 0x80000000){
+		return 0;
+	}
+
+	return CNWSMessage__SendServerToPlayerExamineGui_PlaceableDataNext(pMess, NULL, ply, trg);
+}
+
+int __fastcall CNWSMessage__SendServerToPlayerExamineGui_CreatureData(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg){
+
+	if (!ply)
+		return CNWSMessage__SendServerToPlayerExamineGui_CreatureDataNext(pMess, NULL, ply, trg);
+
+	events.Log("o SendServerToPlayerExamineGui_CreatureData: %08lx\nCre: %08lx\n", ply->obj_id, trg);
+
+	events.EP->EVENT = EVENT_EXAMINE;
+	events.EP->oTarget[0] = trg;
+
+
+	int nReturn = events.FireEvent(ply->obj_id);
+
+	if (nReturn != 0x80000000){
+		return 0;
+	}
+
+	return CNWSMessage__SendServerToPlayerExamineGui_CreatureDataNext(pMess, NULL, ply, trg);
+}
+
+int __fastcall CNWSMessage__SendServerToPlayerExamineGui_ItemData(CNWSMessage *pMess, void*, CNWSPlayer * ply, nwn_objid_t trg){
+
+	if (!ply)
+		return CNWSMessage__SendServerToPlayerExamineGui_ItemDataNext(pMess, NULL, ply, trg);
+
+	events.Log("o SendServerToPlayerExamineGui_ItemData: %08lx\nItem: %08lx\n", ply->obj_id, trg);
+
+	events.EP->EVENT = EVENT_EXAMINE;
+	events.EP->oTarget[0] = trg;
+
+
+	int nReturn = events.FireEvent(ply->obj_id);
+
+	if (nReturn != 0x80000000){
+		return 0;
+	}
+
+	return CNWSMessage__SendServerToPlayerExamineGui_ItemDataNext(pMess, NULL, ply, trg);
+}
+
+int __fastcall CNWSPlayer__PackCreatureIntoMessage(CNWSPlayer * cre, void*){
+
+
+	events.Log("o PackCreatureIntoMessage: %08lx\n", cre->obj_id);
+
+	events.EP->EVENT = EVENT_SAVEPC;
+	
+	int nReturn = events.FireEvent(cre->obj_id);
+
+	if (nReturn != 0x80000000){
+		return 1;
+	}
+
+	return CNWSPlayer__PackCreatureIntoMessageNext(cre,NULL);
+}
 
 void __fastcall CNWSCreature__SetDetectMode(CNWSCreature * cre, void*, unsigned char bToggle){
 
@@ -59,49 +180,6 @@ void __fastcall CNWSCreature__SetStealthMode(CNWSCreature * cre, void*, unsigned
 	}
 
 	CNWSCreature__SetStealthModeNext(cre, NULL, bToggle);
-}
-
-void __fastcall CServerExoAppInternal__RemovePCFromWorld(CServerExoAppInternal * srv, void *, CNWSPlayer * ply){
-
-	if (ply && srv){
-
-		events.Log( "o RemovePCFromWorld: %08lx\n", ply->GetGameObject()->obj_id );
-
-		events.EP->EVENT=EVENT_REMOVEPC;
-
-		int nReturn = events.FireEvent(  ply->GetGameObject()->obj_id ); 	
-	}
-
-	return CServerExoAppInternal__RemovePCFromWorldNext( srv, NULL, ply );
-}
-
-int __fastcall CNWSPlayer__ValidateCharacter( CNWSPlayer * ply, void *,int arg1 ){
-
-	int nResault = CNWSPlayer__ValidateCharacterNext( ply, NULL, arg1 );
-
-	/*if( nResault == 57924 ){
-		
-		int nMax = (*NWN_AppManager)->app_server->srv_internal->GetSetMaxLevel( 0 );
-		CNWSCreature * cre = (CNWSCreature*)ply->GetGameObject();
-		if( cre->cre_stats->GetLevel( 0 ) <= nMax )		
-			nResault = 0;
-	}*/
-
-	if( nResault == 0 ){
-		
-		events.Log( "o ValidateCharacter: %08lx\n", ply->GetGameObject()->obj_id );
-		
-		events.EP->nData[0]=arg1;
-		events.EP->EVENT=EVENT_VALIDATE;
-
-		int nReturn = events.FireEvent(  ply->GetGameObject()->obj_id ); 
-	
-		if( nReturn != 0x80000000 ){
-			return nReturn;
-		}
-	}
-
-	return nResault; 
 }
 
 int __fastcall CNWSCreatureStats__GetEpicWeaponDevastatingCritical( CNWSCreatureStats * cre, void*, CNWSItem * itm ){
@@ -384,17 +462,17 @@ void HookEvents( int nID ){
 			NextHook=(DWORD)&CNWSCreatureStats__GetEpicWeaponDevastatingCriticalNext;
 			name="Devcrit";
 			break;
-		case EVENT_VALIDATE:
-			Addr=0x00432500;
-			CallBack=(DWORD)CNWSPlayer__ValidateCharacter;
-			NextHook=(DWORD)&CNWSPlayer__ValidateCharacterNext;
-			name="Validate";
+		case EVENT_SAVEPC:
+			Addr = 0x00435D50;
+			CallBack = (DWORD)CNWSPlayer__PackCreatureIntoMessage;
+			NextHook = (DWORD)&CNWSPlayer__PackCreatureIntoMessageNext;
+			name = "Downloadpc";
 			break;
-		case EVENT_REMOVEPC:
-			Addr=0x0045B990;
-			CallBack=(DWORD)CServerExoAppInternal__RemovePCFromWorld;
-			NextHook=(DWORD)&CServerExoAppInternal__RemovePCFromWorldNext;
-			name="Removepc";
+		case EVENT_EXAMINE:
+			Addr = 0x00446F60;
+			CallBack = (DWORD)CNWSMessage__SendServerToPlayerExamineGui_ItemData;
+			NextHook = (DWORD)&CNWSMessage__SendServerToPlayerExamineGui_ItemDataNext;
+			name = "Examine";
 			break;
 		default:
 			return;
@@ -415,6 +493,12 @@ void HookEvents( int nID ){
 		if (nID == EVENT_TOGGLEMODE){
 			HookCode((PVOID)0x004BB3F0, (PVOID)CNWSCreature__SetStealthMode, (PVOID*)&CNWSCreature__SetStealthModeNext);
 			HookCode((PVOID)0x004BB3D0, (PVOID)CNWSCreature__SetDetectMode, (PVOID*)&CNWSCreature__SetDetectModeNext);
+		}
+		else if (nID == EVENT_EXAMINE){
+			HookCode((PVOID)0x00446B00, (PVOID)CNWSMessage__SendServerToPlayerExamineGui_CreatureData, (PVOID*)&CNWSMessage__SendServerToPlayerExamineGui_CreatureDataNext);
+			HookCode((PVOID)0x004474B0, (PVOID)CNWSMessage__SendServerToPlayerExamineGui_PlaceableData, (PVOID*)&CNWSMessage__SendServerToPlayerExamineGui_PlaceableDataNext);
+			HookCode((PVOID)0x004475E0, (PVOID)CNWSMessage__SendServerToPlayerExamineGui_TrapData, (PVOID*)&CNWSMessage__SendServerToPlayerExamineGui_TrapDataNext);
+			HookCode((PVOID)0x00447970, (PVOID)CNWSMessage__SendServerToPlayerExamineGui_DoorData, (PVOID*)&CNWSMessage__SendServerToPlayerExamineGui_DoorDataNext);
 		}
 
 		events.Log( "o Hooked %s -> %s\n", name, events.Script[nID].CStr() );

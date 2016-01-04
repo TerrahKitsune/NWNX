@@ -11,19 +11,22 @@ public:
 
 class CCreatureMaps {
 public:
+	uint32_t MiniMapCount;
 	CMiniMapData **MiniMap;
 	nwn_objid_t *Areas;
 	uint32_t AreaCount;
 	uint32_t AreaAlloc;
-	uint32_t MiniMapCount;
+	uint32_t AreaCount2;
 
+	bool Exists(nwn_objid_t areaid);
 	void AddArea(unsigned areid);
-	void RemoveArea(unsigned areaid);
+	void RemoveArea(nwn_objid_t area, int index);
 	CMiniMapData **ResizeMapList(int NewSize);
 	CMiniMapData **Copy(CMiniMapData** CopyFrom, unsigned int nSize);
 	void DeleteMiniMaps();
 	void DeleteAreas();
 	nwn_objid_t *CopyAreas(int NewSize);
+	int IndexOf(nwn_objid_t area);
 };
 
 class CTURDMaps {

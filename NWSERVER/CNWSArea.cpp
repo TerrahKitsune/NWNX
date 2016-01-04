@@ -1,7 +1,7 @@
 #include "types.h"
 #include "nwn_internals.h"
 
-void			(__thiscall *CNWSArea__CNWSArea)(void* pTHIS, CResRef, int, unsigned long)=(void (__thiscall*)(void* pTHIS, CResRef, int, unsigned long))0x0050A2E0;
+void*			(__thiscall *CNWSArea__CNWSArea)(void* pTHIS, CResRef, int, unsigned long)=(void* (__thiscall*)(void* pTHIS, CResRef, int, unsigned long))0x0050A2E0;
 void			(__thiscall *CNWSArea__Destructor)(CNWSArea *pTHIS)=(void (__thiscall*)(CNWSArea *pTHIS))0x0050A780;
 int 			(__thiscall *CNWSArea__LoadArea)(void*, int)=(int (__thiscall*)(void*, int))0x0050C380;
 void			(__thiscall *CNWSArea__scalar_Destructor)(CNWSArea *pTHIS, char)=(void (__thiscall*)(CNWSArea *pTHIS, char))0x0050A760;
@@ -25,8 +25,8 @@ void CNWSArea_s::Destructor() {
 	CNWSArea__Destructor(this);
 }
 
-void CNWSArea_s::CNWSArea(CResRef a1, int a2, unsigned long a3) {
-	CNWSArea__CNWSArea(this, a1, a2, a3);
+void * CNWSArea_s::CNWSArea(CResRef a1, int a2, unsigned long a3) {
+	return CNWSArea__CNWSArea(this, a1, a2, a3);
 }
 
 signed int CNWSArea_s::AddObjectToArea(unsigned int Object_ID, int bRunEnterScript) {

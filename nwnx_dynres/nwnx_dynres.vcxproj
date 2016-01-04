@@ -119,12 +119,10 @@
     <ClCompile Include="..\NWSERVER\nwnx_memory.cpp" />
     <ClCompile Include="..\NWSERVER\nwn_internals.cpp" />
     <ClCompile Include="..\NWSERVER\_ExoString.cpp" />
-    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="CNWNXDynRes.cpp" />
     <ClCompile Include="ERF.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Hooks.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sha256.c" />
   </ItemGroup>
@@ -231,12 +229,10 @@
     <ClInclude Include="..\NWSERVER\_CExoLocStringElement.h" />
     <ClInclude Include="..\NWSERVER\_CNWSDoor.h" />
     <ClInclude Include="..\NWSERVER\_ExoString.h" />
-    <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="CNWNXDynRes.h" />
     <ClInclude Include="E:\Code\Terrah\FileManager\FileManager.h" />
     <ClInclude Include="E:\Code\Terrah\FileManager\sha256.h" />
     <ClInclude Include="ERF.h" />
-    <ClInclude Include="LinkedList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

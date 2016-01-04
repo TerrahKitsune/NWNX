@@ -21,8 +21,6 @@
 #include "../NWSERVER/types.h"
 #include "../NWNXdll/NWNXBase.h"
 
-
-
 class CNWNXAreas : public CNWNXBase  
 {
 public:
@@ -39,9 +37,31 @@ public:
 	void RenameArea( CNWSArea * are, char * str );
 	long double GetHeight( CNWSArea * are, char * str );
 
+	void SendNameUpdate(DWORD SendToID, DWORD ObjectToUpdateID);
+	void UpdateObjectForAllPlayers(nwn_objid_t obj);
+	void ResendClientArea(nwn_objid_t obj);
+
+	void AddAreaToCreatures(CNWSModule *pModule, DWORD nAreaID);
+	void AddAreaToCreature(CNWSModule *pModule, CNWSCreature *pObject, DWORD nAreaID);
+	void RemoveAreaForCreatures(CNWSModule *pModule, DWORD nAreaID, CNWSArea * are);
+	void RemoveAreaFromCreature(CNWSCreature *pObject, DWORD nAreaID);
+	void UpdateAreasForDMs();
+	bool FixCreature(CNWSModule* mod, CNWSCreature* pObject, bool log=true);
+	bool FixAllCreatures(CNWSModule* mod);
+	bool HasPlayers(CNWSArea * are);
+	bool CheckHasPlayersInTrans();
+
+	void GetSafeLocation(CScriptLocation * loc);
+
+	void DestoryObject(nwn_objid_t id);
+
 	nwn_objid_t Last;
 	CNWNXMemory mem;
 	DWORD test;
+
+	bool backlog;
+	bool HasUpdated;
+	bool IsK;
 
 protected:
 

@@ -52,7 +52,7 @@ BOOL CNWNXNames::OnCreate(const char* LogDir){
 
 void CNWNXNames::WriteLogHeader( ){
 
-	fprintf( m_fFile, "NWNXNames v0.92 created by Terra_777\n\n" );
+	fprintf( m_fFile, "NWNXNames v0.93 created by Terra_777\n\n" );
 	fflush( m_fFile );	
 }
 
@@ -160,6 +160,14 @@ char* CNWNXNames::OnRequest(char *gameObject, char* Request, char* Parameters){
 
 		Log( "o %s( %08X: %s )\n", Request, objID, Parameters );
 		UpdateObjectForAllPlayers( (CNWSObject*)(*NWN_AppManager)->app_server->GetGameObject( objID ) );
+	}
+	else if (strcmp(Request, "UpdatePCList") == 0){
+
+		CNWSPlayer * ply = (*NWN_AppManager)->app_server->GetClientObjectByObjectId(((CNWSCreature*)gameObject)->obj.obj_generic.obj_id );
+		if (ply){
+			Log("o %s( %08X: %s )\n", Request, ply->obj_id, Parameters);
+			(*NWN_AppManager)->app_server->GetNWSMessage()->SendServerToPlayerPlayerList_All(ply);
+		}
 	}
 	else if( strcmp( Request, "GetFamilarCompanionName" ) == 0 ){
 

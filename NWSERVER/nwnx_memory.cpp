@@ -20,16 +20,6 @@ void CNWNXMemory::SetFunctionPointers( void ){
 	nwnx_free = (void (__cdecl *)(void *))0x0040D560;
 
 	nwnx_realloc = (void * (__cdecl *)(void *, unsigned int))0x006052EC;
-}
 
-void * CNWNXMemory::nwnx_calloc( unsigned int num, unsigned int size ){
-
-	void * pArray = nwnx_malloc( num*size );
-
-	if( pArray == NULL )
-		return NULL;
-
-	memset( pArray, NULL, num*size );
-
-	return pArray;
+	nwnx_calloc = (void * (__cdecl *)(unsigned int, unsigned int))0x00603F18;
 }

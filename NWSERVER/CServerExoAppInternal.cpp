@@ -13,6 +13,7 @@ CNWSDoor* 				(__thiscall *CServerExoAppInternal__GetDoorByGameObjectID)(CServer
 CNWSEncounter* 			(__thiscall *CServerExoAppInternal__GetEncounterByGameObjectID)(CServerExoAppInternal *pTHIS, nwn_objid_t oID) = (CNWSEncounter* (__thiscall*)(CServerExoAppInternal *pTHIS, nwn_objid_t oID))0x0045C2A0;
 CNWSStore* 				(__thiscall *CServerExoAppInternal__GetStoreByGameObjectID)(CServerExoAppInternal* pThis, nwn_objid_t oID) = (CNWSStore* (__thiscall*)(CServerExoAppInternal* pThis, nwn_objid_t oID))0x0045BF80;
 CNWSTrigger* 			(__thiscall *CServerExoAppInternal__GetTriggerByGameObjectID)(CServerExoAppInternal* pThis, nwn_objid_t oID) = (CNWSTrigger* (__thiscall*)(CServerExoAppInternal* pThis, nwn_objid_t oID))0x0045C110;
+CNWSWaypoint* 			(__thiscall *CServerExoAppInternal__GetWaypointByGameObjectID)(CServerExoAppInternal* pThis, nwn_objid_t oID) = (CNWSWaypoint* (__thiscall*)(CServerExoAppInternal* pThis, nwn_objid_t oID))0x0045C250;
 int 					(__thiscall *CServerExoAppInternal__GetFactionOfObject)(CServerExoAppInternal* pTHIS, nwn_objid_t, uint32_t *ret_factionID) = (int (__thiscall*)(CServerExoAppInternal* pTHIS, nwn_objid_t, uint32_t *ret_factionID))0x004615A0;
 
 int	CServerExoAppInternal_s::GetSetMaxLevel( int nMaxLevel ){
@@ -23,6 +24,10 @@ int	CServerExoAppInternal_s::GetSetMaxLevel( int nMaxLevel ){
 		return lvl;
 	*(DWORD *)(ptr + 180) = nMaxLevel;
 	return lvl;
+}
+
+CNWSWaypoint *CServerExoAppInternal_s::GetWaypointByGameObjectID(nwn_objid_t oID) {
+	return CServerExoAppInternal__GetWaypointByGameObjectID(this, oID);
 }
 
 CNWSArea *CServerExoAppInternal_s::GetAreaByGameObjectID(nwn_objid_t oID) {

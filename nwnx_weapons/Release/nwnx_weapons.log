@@ -1,65 +1,65 @@
-﻿Build started 2013-09-15 03:30:07.
-     1>Project "\\terrahnet\Terra\nwnx\nwnx_weapons\nwnx_weapons.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 2014-10-14 22:38:09.
+     1>Project "D:\Media\OneDrive\Offentligt\NWNX\nwnx_weapons\nwnx_weapons.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _WINDLL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\NWNXdll\IniFile.cpp ..\NWNXdll\NWNXBase.cpp AssemblyHelper.cpp HookMain.cpp main.cpp NWNXWeapons.cpp NWSERVER\C2DA.cpp NWSERVER\CAutoMap.cpp NWSERVER\CExoLinkedList.cpp NWSERVER\CExoLocString.cpp NWSERVER\CExoResMan.cpp NWSERVER\CExoString.cpp NWSERVER\CFactionManager.cpp NWSERVER\CGameEffect.cpp NWSERVER\CGameObjectArray.cpp NWSERVER\CItemRepository.cpp NWSERVER\CLastUpdateObject.cpp NWSERVER\CNetLayer.cpp NWSERVER\CNWBaseItemArray.cpp NWSERVER\CNWCCMessageData.cpp NWSERVER\CNWClass.cpp NWSERVER\CNWMessage.cpp NWSERVER\CNWRules.cpp NWSERVER\CNWSArea.cpp NWSERVER\CNWSAreaOfEffectObject.cpp NWSERVER\CNWSCombatRound.cpp NWSERVER\CNWSCreature.cpp NWSERVER\CNWSCreatureStats.cpp NWSERVER\CNWSDoor.cpp NWSERVER\CNWSEncounter.cpp NWSERVER\CNWSFaction.cpp NWSERVER\CNWSInventory.cpp NWSERVER\CNWSItem.cpp NWSERVER\CNWSMessage.cpp NWSERVER\CNWSModule.cpp NWSERVER\CNWSObject.cpp NWSERVER\CNWSpellArray.cpp NWSERVER\CNWSPlaceable.cpp NWSERVER\CNWSPlayer.cpp NWSERVER\CNWSPlayerCharSheetGUI.cpp NWSERVER\CNWSplayerTURD.cpp NWSERVER\CNWSScriptVarTable.cpp NWSERVER\CNWSStats_Level.cpp NWSERVER\CNWSStore.cpp NWSERVER\CNWSTile.cpp NWSERVER\CNWSTrigger.cpp NWSERVER\CNWTile.cpp NWSERVER\CResGFF.cpp NWSERVER\CResRef.cpp NWSERVER\CScriptEvent.cpp NWSERVER\CServerAIMaster.cpp NWSERVER\CServerExoApp.cpp NWSERVER\CServerExoAppInternal.cpp NWSERVER\CTlkTable.cpp NWSERVER\CTwoDimArrays.cpp NWSERVER\CVirtualMachine.cpp NWSERVER\CWorldTimer.cpp NWSERVER\nwnx_memory.cpp NWSERVER\nwn_internals.cpp NWSERVER\_ExoString.cpp WeaponBehavior.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _WINDLL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\NWNXdll\IniFile.cpp ..\NWNXdll\NWNXBase.cpp AssemblyHelper.cpp HookMain.cpp main.cpp NWNXWeapons.cpp NWSERVER\C2DA.cpp NWSERVER\CAutoMap.cpp NWSERVER\CExoLinkedList.cpp NWSERVER\CExoLocString.cpp NWSERVER\CExoResMan.cpp NWSERVER\CExoString.cpp NWSERVER\CFactionManager.cpp NWSERVER\CGameEffect.cpp NWSERVER\CGameObjectArray.cpp NWSERVER\CItemRepository.cpp NWSERVER\CLastUpdateObject.cpp NWSERVER\CNetLayer.cpp NWSERVER\CNWBaseItemArray.cpp NWSERVER\CNWCCMessageData.cpp NWSERVER\CNWClass.cpp NWSERVER\CNWMessage.cpp NWSERVER\CNWRules.cpp NWSERVER\CNWSArea.cpp NWSERVER\CNWSAreaOfEffectObject.cpp NWSERVER\CNWSCombatRound.cpp NWSERVER\CNWSCreature.cpp NWSERVER\CNWSCreatureStats.cpp NWSERVER\CNWSDoor.cpp NWSERVER\CNWSEncounter.cpp NWSERVER\CNWSFaction.cpp NWSERVER\CNWSInventory.cpp NWSERVER\CNWSItem.cpp NWSERVER\CNWSMessage.cpp NWSERVER\CNWSModule.cpp NWSERVER\CNWSObject.cpp NWSERVER\CNWSpellArray.cpp NWSERVER\CNWSPlaceable.cpp NWSERVER\CNWSPlayer.cpp NWSERVER\CNWSPlayerCharSheetGUI.cpp NWSERVER\CNWSplayerTURD.cpp NWSERVER\CNWSScriptVarTable.cpp NWSERVER\CNWSStats_Level.cpp NWSERVER\CNWSStore.cpp NWSERVER\CNWSTile.cpp NWSERVER\CNWSTrigger.cpp NWSERVER\CNWTile.cpp NWSERVER\CResGFF.cpp NWSERVER\CResRef.cpp NWSERVER\CScriptEvent.cpp NWSERVER\CServerAIMaster.cpp NWSERVER\CServerExoApp.cpp NWSERVER\CServerExoAppInternal.cpp NWSERVER\CTlkTable.cpp NWSERVER\CTwoDimArrays.cpp NWSERVER\CVirtualMachine.cpp NWSERVER\CWorldTimer.cpp NWSERVER\nwnx_memory.cpp NWSERVER\nwn_internals.cpp NWSERVER\_ExoString.cpp WeaponBehavior.cpp
          IniFile.cpp
          NWNXBase.cpp
          AssemblyHelper.cpp
      1>AssemblyHelper.cpp(59): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>AssemblyHelper.cpp(65): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>AssemblyHelper.cpp(66): warning C4244: '=' : conversion from 'long' to 'char', possible loss of data
          HookMain.cpp
          main.cpp
          NWNXWeapons.cpp
      1>NWNXWeapons.cpp(43): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
      1>NWNXWeapons.cpp(84): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
      1>NWNXWeapons.cpp(114): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'vsprintf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
      1>NWNXWeapons.cpp(134): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
      1>NWNXWeapons.cpp(172): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
      1>NWNXWeapons.cpp(182): warning C4018: '<' : signed/unsigned mismatch
      1>NWNXWeapons.cpp(313): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>NWNXWeapons.cpp(315): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
      1>NWNXWeapons.cpp(323): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>NWNXWeapons.cpp(330): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>NWNXWeapons.cpp(337): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>NWNXWeapons.cpp(342): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(346): warning C4244: 'argument' : conversion from 'DWORD' to 'WORD', possible loss of data
      1>NWNXWeapons.cpp(347): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(355): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>NWNXWeapons.cpp(360): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(364): warning C4244: 'argument' : conversion from 'DWORD' to 'WORD', possible loss of data
      1>NWNXWeapons.cpp(365): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(379): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>NWNXWeapons.cpp(385): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(443): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(445): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(450): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
      1>NWNXWeapons.cpp(453): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
      1>NWNXWeapons.cpp(474): warning C4018: '<' : signed/unsigned mismatch
      1>NWNXWeapons.cpp(485): warning C4018: '<' : signed/unsigned mismatch
      1>NWNXWeapons.cpp(516): warning C4018: '<' : signed/unsigned mismatch
@@ -112,6 +112,11 @@
          CNWTile.cpp
          CResGFF.cpp
          CResRef.cpp
+     1>NWSERVER\CResRef.cpp(6): error C2039: 'CResRef' : is not a member of 'CResRef_s'
+                 d:\media\onedrive\offentligt\nwnx\nwnx_weapons\nwserver\.\CResRef.h(4) : see declaration of 'CResRef_s'
+     1>NWSERVER\CResRef.cpp(6): error C2365: 'CResRef' : redefinition; previous definition was 'typedef'
+                 d:\media\onedrive\offentligt\nwnx\nwnx_weapons\nwserver\types.h(26) : see declaration of 'CResRef'
+     1>NWSERVER\CResRef.cpp(7): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
          CScriptEvent.cpp
          CServerAIMaster.cpp
          CServerExoApp.cpp
@@ -124,102 +129,36 @@
          nwn_internals.cpp
          _ExoString.cpp
      1>NWSERVER\_ExoString.cpp(22): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>NWSERVER\_ExoString.cpp(40): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>NWSERVER\_ExoString.cpp(65): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>NWSERVER\_ExoString.cpp(76): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>NWSERVER\_ExoString.cpp(100): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>NWSERVER\_ExoString.cpp(111): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>NWSERVER\_ExoString.cpp(115): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
      1>NWSERVER\_ExoString.cpp(138): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
          Compiling...
          WeaponBehavior.cpp
      1>WeaponBehavior.cpp(467): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
      1>WeaponBehavior.cpp(470): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
      1>WeaponBehavior.cpp(479): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
      1>WeaponBehavior.cpp(522): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>WeaponBehavior.cpp(552): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+                 D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
      1>WeaponBehavior.cpp(553): warning C4244: 'argument' : conversion from 'DWORD' to 'WORD', possible loss of data
-       Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\terrahnet\Terra\nwnx\Release\nwnx_weapons.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\terrahnet\Terra\nwnx\Release\nwnx_weapons.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\terrahnet\Terra\nwnx\Release\nwnx_weapons.lib" /MACHINE:X86 /SAFESEH /DLL Release\IniFile.obj
-         Release\NWNXBase.obj
-         Release\AssemblyHelper.obj
-         Release\HookMain.obj
-         Release\main.obj
-         Release\NWNXWeapons.obj
-         Release\C2DA.obj
-         Release\CAutoMap.obj
-         Release\CExoLinkedList.obj
-         Release\CExoLocString.obj
-         Release\CExoResMan.obj
-         Release\CExoString.obj
-         Release\CFactionManager.obj
-         Release\CGameEffect.obj
-         Release\CGameObjectArray.obj
-         Release\CItemRepository.obj
-         Release\CLastUpdateObject.obj
-         Release\CNetLayer.obj
-         Release\CNWBaseItemArray.obj
-         Release\CNWCCMessageData.obj
-         Release\CNWClass.obj
-         Release\CNWMessage.obj
-         Release\CNWRules.obj
-         Release\CNWSArea.obj
-         Release\CNWSAreaOfEffectObject.obj
-         Release\CNWSCombatRound.obj
-         Release\CNWSCreature.obj
-         Release\CNWSCreatureStats.obj
-         Release\CNWSDoor.obj
-         Release\CNWSEncounter.obj
-         Release\CNWSFaction.obj
-         Release\CNWSInventory.obj
-         Release\CNWSItem.obj
-         Release\CNWSMessage.obj
-         Release\CNWSModule.obj
-         Release\CNWSObject.obj
-         Release\CNWSpellArray.obj
-         Release\CNWSPlaceable.obj
-         Release\CNWSPlayer.obj
-         Release\CNWSPlayerCharSheetGUI.obj
-         Release\CNWSplayerTURD.obj
-         Release\CNWSScriptVarTable.obj
-         Release\CNWSStats_Level.obj
-         Release\CNWSStore.obj
-         Release\CNWSTile.obj
-         Release\CNWSTrigger.obj
-         Release\CNWTile.obj
-         Release\CResGFF.obj
-         Release\CResRef.obj
-         Release\CScriptEvent.obj
-         Release\CServerAIMaster.obj
-         Release\CServerExoApp.obj
-         Release\CServerExoAppInternal.obj
-         Release\CTlkTable.obj
-         Release\CTwoDimArrays.obj
-         Release\CVirtualMachine.obj
-         Release\CWorldTimer.obj
-         Release\nwnx_memory.obj
-         Release\nwn_internals.obj
-         Release\_ExoString.obj
-         Release\WeaponBehavior.obj
-            Creating library \\terrahnet\Terra\nwnx\Release\nwnx_weapons.lib and object \\terrahnet\Terra\nwnx\Release\nwnx_weapons.exp
-         Generating code
-         Finished generating code
-         nwnx_weapons.vcxproj -> \\terrahnet\Terra\nwnx\Release\nwnx_weapons.dll
-     1>Done Building Project "\\terrahnet\Terra\nwnx\nwnx_weapons\nwnx_weapons.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "D:\Media\OneDrive\Offentligt\NWNX\nwnx_weapons\nwnx_weapons.vcxproj" (Rebuild target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:15.74
+Time Elapsed 00:00:07.04

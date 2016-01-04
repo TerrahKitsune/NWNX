@@ -53,19 +53,31 @@ int CExoLocString_s::AddString(uint32_t nLocale, char *sString) {
 	  pCurrentData = (CExoLocStringElement *)this->List->GetNext(pCurrentElement);
 	}
 
-
-	pNewEntry = (CExoLocStringElement*)mem.nwnx_malloc( sizeof( CExoLocStringElement ) );
+	/*pNewEntry = (CExoLocStringElement*)mem.nwnx_malloc( sizeof( CExoLocStringElement ) );
 	if ( !pNewEntry  )
 	{
-	  delete[] sString;
+	  mem.nwnx_free( sString );
 	  return 0;
 	}
 	pNewEntry->LangID = nLocale;
 	pNewEntry->Text.text = sString;
 	pNewEntry->Text.len = strlen(sString)+1;
-	this->List->AddTail(pNewEntry);
+	this->List->AddTail(pNewEntry);*/
+	
 	//++this->List->Count;
 	//++this->List->ListHeader->Count;
 	//delete[] sString;
+
+	int(__thiscall *CExoLocString__AddString)(void*pThis, int loc, CExoString str, unsigned char unkown) = (int(__thiscall *)(void*, int, CExoString, unsigned char))0x00610AE0;
+
+	CExoString * str = (CExoString*)mem.nwnx_malloc(sizeof(CExoString));
+	str->text = sString;
+	str->len = strlen(sString) + 1;
+	unsigned char test = 0;
+	CExoLocString__AddString(this, nLocale, *str, test);
+
+	mem.nwnx_free(sString);
+	mem.nwnx_free(str);
+
 	return 1;
 }

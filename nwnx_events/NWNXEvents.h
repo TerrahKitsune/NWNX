@@ -32,8 +32,8 @@
 #define EVENT_ATTACK 6
 #define EVENT_TOGGLEMODE 7
 #define EVENT_DEVCRIT 8
-#define EVENT_VALIDATE 9
-#define EVENT_REMOVEPC 10
+#define EVENT_SAVEPC 9
+#define EVENT_EXAMINE 10
 #define NUM_EVENTS 11
 
 struct EventParams{

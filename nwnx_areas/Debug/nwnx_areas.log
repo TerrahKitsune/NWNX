@@ -1,10 +1,135 @@
-﻿Build started 2013-09-12 21:09:18.
-     1>Project "\\terrahnet\Terra\nwnx\nwnx_areas\nwnx_areas.vcxproj" on node 2 (ClCompile target(s)).
+﻿Build started 2015-09-29 23:00:55.
+     1>Project "E:\Media\OneDrive\Offentligt\NWNX\nwnx_areas\nwnx_areas.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHs /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt NWNXAreas.cpp
+         E:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\NWNXdll\IniFile.cpp ..\NWNXdll\NWNXBase.cpp ..\NWSERVER\C2DA.cpp ..\NWSERVER\CAutoMap.cpp ..\NWSERVER\CExoLinkedList.cpp ..\NWSERVER\CExoLocString.cpp ..\NWSERVER\CExoResMan.cpp ..\NWSERVER\CExoString.cpp ..\NWSERVER\CFactionManager.cpp ..\NWSERVER\CGameEffect.cpp ..\NWSERVER\CGameObjectArray.cpp ..\NWSERVER\CItemRepository.cpp ..\NWSERVER\CLastUpdateObject.cpp ..\NWSERVER\CNetLayer.cpp ..\NWSERVER\CNWBaseItemArray.cpp ..\NWSERVER\CNWCCMessageData.cpp ..\NWSERVER\CNWClass.cpp ..\NWSERVER\CNWMessage.cpp ..\NWSERVER\CNWRules.cpp ..\NWSERVER\CNWSArea.cpp ..\NWSERVER\CNWSAreaOfEffectObject.cpp ..\NWSERVER\CNWSCombatRound.cpp ..\NWSERVER\CNWSCreature.cpp ..\NWSERVER\CNWSCreatureStats.cpp ..\NWSERVER\CNWSDoor.cpp ..\NWSERVER\CNWSEncounter.cpp ..\NWSERVER\CNWSFaction.cpp ..\NWSERVER\CNWSInventory.cpp ..\NWSERVER\CNWSItem.cpp ..\NWSERVER\CNWSMessage.cpp ..\NWSERVER\CNWSModule.cpp ..\NWSERVER\CNWSObject.cpp ..\NWSERVER\CNWSpellArray.cpp ..\NWSERVER\CNWSPlaceable.cpp ..\NWSERVER\CNWSPlayer.cpp ..\NWSERVER\CNWSPlayerCharSheetGUI.cpp ..\NWSERVER\CNWSplayerTURD.cpp ..\NWSERVER\CNWSScriptVarTable.cpp ..\NWSERVER\CNWSStats_Level.cpp ..\NWSERVER\CNWSStore.cpp ..\NWSERVER\CNWSTile.cpp ..\NWSERVER\CNWSTrigger.cpp ..\NWSERVER\CNWTile.cpp ..\NWSERVER\CResGFF.cpp ..\NWSERVER\CResRef.cpp ..\NWSERVER\CScriptEvent.cpp ..\NWSERVER\CServerAIMaster.cpp ..\NWSERVER\CServerExoApp.cpp ..\NWSERVER\CServerExoAppInternal.cpp ..\NWSERVER\CTlkTable.cpp ..\NWSERVER\CTwoDimArrays.cpp ..\NWSERVER\CVirtualMachine.cpp ..\NWSERVER\CWorldTimer.cpp ..\NWSERVER\nwnx_memory.cpp ..\NWSERVER\nwn_internals.cpp ..\NWSERVER\_ExoString.cpp main.cpp NWNXAreas.cpp
          NWNXAreas.cpp
-     1>Done Building Project "\\terrahnet\Terra\nwnx\nwnx_areas\nwnx_areas.vcxproj" (ClCompile target(s)).
+     1>e:\media\onedrive\offentligt\nwnx\nwnx_areas\nwnxareas.cpp(27): warning C4018: '<' : signed/unsigned mismatch
+         main.cpp
+         _ExoString.cpp
+         nwn_internals.cpp
+         nwnx_memory.cpp
+         CWorldTimer.cpp
+         CVirtualMachine.cpp
+         CTwoDimArrays.cpp
+         CTlkTable.cpp
+         CServerExoAppInternal.cpp
+         CServerExoApp.cpp
+         CServerAIMaster.cpp
+         CScriptEvent.cpp
+         CResRef.cpp
+         CResGFF.cpp
+         CNWTile.cpp
+         CNWSTrigger.cpp
+         CNWSTile.cpp
+         CNWSStore.cpp
+         CNWSStats_Level.cpp
+         Generating Code...
+         Compiling...
+         CNWSScriptVarTable.cpp
+         CNWSplayerTURD.cpp
+         CNWSPlayerCharSheetGUI.cpp
+         CNWSPlayer.cpp
+         CNWSPlaceable.cpp
+         CNWSpellArray.cpp
+         CNWSObject.cpp
+         CNWSModule.cpp
+         CNWSMessage.cpp
+         CNWSItem.cpp
+         CNWSInventory.cpp
+         CNWSFaction.cpp
+         CNWSEncounter.cpp
+         CNWSDoor.cpp
+         CNWSCreatureStats.cpp
+         CNWSCreature.cpp
+     1>e:\media\onedrive\offentligt\nwnx\nwserver\cnwscreature.cpp(82): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+         CNWSCombatRound.cpp
+         CNWSAreaOfEffectObject.cpp
+         CNWSArea.cpp
+         CNWRules.cpp
+         Generating Code...
+         Compiling...
+         CNWMessage.cpp
+         CNWClass.cpp
+         CNWCCMessageData.cpp
+         CNWBaseItemArray.cpp
+         CNetLayer.cpp
+         CLastUpdateObject.cpp
+         CItemRepository.cpp
+         CGameObjectArray.cpp
+         CGameEffect.cpp
+         CFactionManager.cpp
+         CExoString.cpp
+         CExoResMan.cpp
+         CExoLocString.cpp
+         CExoLinkedList.cpp
+         CAutoMap.cpp
+         C2DA.cpp
+         NWNXBase.cpp
+         IniFile.cpp
+         Generating Code...
+       Link:
+         E:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Media\OneDrive\Offentligt\NWNX\Debug\nwnx_areas.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Media\OneDrive\Offentligt\NWNX\Debug\nwnx_areas.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Media\OneDrive\Offentligt\NWNX\Debug\nwnx_areas.lib" /MACHINE:X86 /DLL Debug\IniFile.obj
+         Debug\NWNXBase.obj
+         Debug\C2DA.obj
+         Debug\CAutoMap.obj
+         Debug\CExoLinkedList.obj
+         Debug\CExoLocString.obj
+         Debug\CExoResMan.obj
+         Debug\CExoString.obj
+         Debug\CFactionManager.obj
+         Debug\CGameEffect.obj
+         Debug\CGameObjectArray.obj
+         Debug\CItemRepository.obj
+         Debug\CLastUpdateObject.obj
+         Debug\CNetLayer.obj
+         Debug\CNWBaseItemArray.obj
+         Debug\CNWCCMessageData.obj
+         Debug\CNWClass.obj
+         Debug\CNWMessage.obj
+         Debug\CNWRules.obj
+         Debug\CNWSArea.obj
+         Debug\CNWSAreaOfEffectObject.obj
+         Debug\CNWSCombatRound.obj
+         Debug\CNWSCreature.obj
+         Debug\CNWSCreatureStats.obj
+         Debug\CNWSDoor.obj
+         Debug\CNWSEncounter.obj
+         Debug\CNWSFaction.obj
+         Debug\CNWSInventory.obj
+         Debug\CNWSItem.obj
+         Debug\CNWSMessage.obj
+         Debug\CNWSModule.obj
+         Debug\CNWSObject.obj
+         Debug\CNWSpellArray.obj
+         Debug\CNWSPlaceable.obj
+         Debug\CNWSPlayer.obj
+         Debug\CNWSPlayerCharSheetGUI.obj
+         Debug\CNWSplayerTURD.obj
+         Debug\CNWSScriptVarTable.obj
+         Debug\CNWSStats_Level.obj
+         Debug\CNWSStore.obj
+         Debug\CNWSTile.obj
+         Debug\CNWSTrigger.obj
+         Debug\CNWTile.obj
+         Debug\CResGFF.obj
+         Debug\CResRef.obj
+         Debug\CScriptEvent.obj
+         Debug\CServerAIMaster.obj
+         Debug\CServerExoApp.obj
+         Debug\CServerExoAppInternal.obj
+         Debug\CTlkTable.obj
+         Debug\CTwoDimArrays.obj
+         Debug\CVirtualMachine.obj
+         Debug\CWorldTimer.obj
+         Debug\nwnx_memory.obj
+         Debug\nwn_internals.obj
+         Debug\_ExoString.obj
+         Debug\main.obj
+         Debug\NWNXAreas.obj
+            Creating library E:\Media\OneDrive\Offentligt\NWNX\Debug\nwnx_areas.lib and object E:\Media\OneDrive\Offentligt\NWNX\Debug\nwnx_areas.exp
+         nwnx_areas.vcxproj -> E:\Media\OneDrive\Offentligt\NWNX\Debug\nwnx_areas.dll
+     1>Done Building Project "E:\Media\OneDrive\Offentligt\NWNX\nwnx_areas\nwnx_areas.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.13
+Time Elapsed 00:00:08.96

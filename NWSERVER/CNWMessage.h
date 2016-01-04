@@ -35,6 +35,7 @@ struct CNWMessage_s {
 	int			WriteBYTE( BYTE b, int flag );	
 	int			WriteDWORD( DWORD dw, int flag );
 	int			WriteVOIDPtr( void * ptr, DWORD size );
+	int			WriteBool(int nbool);
 };
 
 void NWNX_DestroyMessage( CNWMessage * mess );

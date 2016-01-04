@@ -121,9 +121,14 @@
     <ClCompile Include="..\NWSERVER\nwnx_memory.cpp" />
     <ClCompile Include="..\NWSERVER\nwn_internals.cpp" />
     <ClCompile Include="..\NWSERVER\_ExoString.cpp" />
+    <ClCompile Include="Hooks.cpp" />
+    <ClCompile Include="LuaINI.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NWNLuaLib.cpp" />
     <ClCompile Include="NWNXLua.cpp" />
+    <ClCompile Include="NWNXSpecialAbilities.cpp" />
+    <ClCompile Include="NWNXSpellbook.cpp" />
+    <ClCompile Include="nwnx_memory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\NWNXdll\IniFile.h" />
@@ -228,12 +233,17 @@
     <ClInclude Include="..\NWSERVER\_CExoLocStringElement.h" />
     <ClInclude Include="..\NWSERVER\_CNWSDoor.h" />
     <ClInclude Include="..\NWSERVER\_ExoString.h" />
+    <ClInclude Include="Hooks.h" />
     <ClInclude Include="lauxlib.h" />
     <ClInclude Include="lua.h" />
     <ClInclude Include="luaconf.h" />
+    <ClInclude Include="LuaINI.h" />
     <ClInclude Include="lualib.h" />
     <ClInclude Include="NWNLuaLib.h" />
     <ClInclude Include="NWNXLua.h" />
+    <ClInclude Include="NWNXSpecialAbilities.h" />
+    <ClInclude Include="NWNXSpellbook.h" />
+    <ClInclude Include="nwnx_memory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

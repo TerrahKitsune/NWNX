@@ -16,6 +16,9 @@
     <Filter Include="NWSERVER">
       <UniqueIdentifier>{7eed1f66-8434-4d65-8da4-bb70ac73efb3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{83dbb55e-fed1-4ef7-be1e-850ea7c21116}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -193,6 +196,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NWNLuaLib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NWNXSpellbook.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="NWNXSpecialAbilities.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="nwnx_memory.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaINI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -519,6 +537,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NWNLuaLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NWNXSpellbook.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="NWNXSpecialAbilities.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="nwnx_memory.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaINI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

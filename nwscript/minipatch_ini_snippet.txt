@@ -1,0 +1,21 @@
+[MINIPATCH]
+;Allows copy and modify to go past the 4 cap
+WeaponColor=false
+;Stops peoples action queues from breaking when people join/leave parties
+PartyActionQueue=true
+;Allows items to merge up to the short limit instead, use with care
+UnlimitedMerge=false
+;Chat will be sent though as DM chat, meaning people will still see if they're hidden
+AllChat=false
+;True Seeing no longer detects stealth
+TSNoStealth=true
+;True seeing provides a spot bonus equal to half CL, local float CS_ECL adds untop of CL
+SpotBonusForTS=true
+;Creatures with the localfloat TS_RANGE acts as if they have blindsight, TS_RANGE is the range of the blindsight
+BlindSight=true
+;Hooks attack of opportunity
+;When hooked it'll run a script called nwnx_aoo
+;OBJECT_SELF is the creature broadcasting
+;use GetLocalObject(OBJECT_SELF,"AOO_TARGET") to get the target of the broadcast
+;use SetLocalObject(OBJECT_SELF,"AOO_FLAG",1) to bypass the event (no aoo)
+AOO=false

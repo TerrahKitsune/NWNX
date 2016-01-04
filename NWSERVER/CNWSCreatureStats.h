@@ -19,8 +19,8 @@ struct CNWSCreatureStats_s {
   CExoArrayList_uint16 cs_skin_feats;
   CNWSCreature *cs_original;
   CExoArrayList_ptr cs_levelstat;
-  CExoLocString2 cs_firstname;
-  CExoLocString2 cs_lastname;
+  CExoLocString cs_firstname;
+  CExoLocString cs_lastname;
   char cs_conv[16];
   unsigned int cs_conv_interruptable;
   CExoLocString cs_desc_base;
@@ -162,6 +162,7 @@ struct CNWSCreatureStats_s {
 
 void 				AddExperience(uint32_t XP);
 char 				AddFeat(uint16_t Feat);
+void				RemoveFeat(uint16_t Feat);
 char				GetACNaturalBase(int bTouchAttack);
 int 				GetAttackModifierVersus(CNWSCreature *Vs);
 //unsigned char 	GetAttacksPerRound();

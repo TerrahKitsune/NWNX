@@ -154,7 +154,7 @@ void NWNXSpellBook::EmptySpellbook( int EatCharges ){
 
 	if( EatCharges > 0 ){
 
-		for( unsigned int n=0;n<Alloc;n++ ){
+		for( unsigned int n=0;n<Len;n++ ){
 
 			if( Matrix[n]!=NULL ){
 				Matrix[n]->Ready = 0;	
@@ -163,7 +163,7 @@ void NWNXSpellBook::EmptySpellbook( int EatCharges ){
 		return;
 	}
 
-	for( unsigned int n=0;n<Alloc;n++ ){
+	for( unsigned int n=0;n<Len;n++ ){
 
 		if( Matrix[n]!=NULL ){
 			RemoveSpell( n );

@@ -18,6 +18,7 @@ struct CServerExoApp_s {
 	CServerAIMaster*	GetServerAIMaster();
 	nwn_objid_t			GetFirstPCObject( void );
 	nwn_objid_t			GetNextPCObject( void );
+	CWorldTimer*		GetWorldTimer();
 };
 
 #endif

@@ -93,6 +93,7 @@ struct CNWSModule_s {
     	return (mod_LL_date * 2880000LL) + mod_LL_time;
     }
 
+	nwn_objid_t			FindObjectByTagTypeOrdinal(CExoString *tag, int type, unsigned long nth);
 	void				AddObjectToLimbo(nwn_objid_t oID);
 	int 				AddObjectToLookupTable(CExoString Tag, nwn_objid_t oID);
 	CNWSArea * 			GetArea(nwn_objid_t oID);

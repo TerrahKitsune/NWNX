@@ -159,6 +159,19 @@ char* CNWNXEvents::OnRequest(char *gameObject, char* Request, char* Parameters){
 	else if( nFunc == 2 ){
 
 		if( nParam >= 0 && nParam < 2 ){ 
+
+			if (EP->lTarget[nParam].x == 0.0 && EP->lTarget[nParam].y == 0.0 && EP->lTarget[nParam].z == 0.0){
+
+				CNWSObject * obj = (CNWSObject*)gameObject;
+
+				if (obj->obj_generic.obj_type2 == OBJECT_TYPE_CREATURE){
+
+					EP->lTarget[nParam].x = obj->obj_position.x;
+					EP->lTarget[nParam].y = obj->obj_position.y;
+					EP->lTarget[nParam].z = obj->obj_position.z;
+				}
+			}
+			
 			sprintf( Parameters, "%f|%f|%f", EP->lTarget[nParam].x,EP->lTarget[nParam].y,EP->lTarget[nParam].z );
 		}
 	}

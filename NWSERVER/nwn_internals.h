@@ -13,8 +13,8 @@ extern int **g_bEnableCombatDebugging;
 
 //void SendFeedbackmessage(nwn_objid_t oID, char *Msg);
 
-extern int 					(__fastcall *CExoArrayList_uint32___Add)(void *, void *, uint32_t a2);
-extern void 				(__fastcall *CExoArrayList_uint32___Remove)(void *, void *, unsigned long);
+extern int(__fastcall *CExoArrayList_uint32___Add)(void *, uint32_t, uint32_t a2);
+extern void(__fastcall *CExoArrayList_uint32___Remove)(void *, uint32_t, unsigned long);
 
 // scalar and vector(if existing) deleting destructors
 extern void (__fastcall *CNWSCreature__dtor_CNWSCreature)						(void *pTHIS, void *pVOID, char);

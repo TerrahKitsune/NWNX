@@ -20,15 +20,40 @@
 
 #include "../NWSERVER/types.h"
 #include "../NWNXdll/NWNXBase.h"
-#include "BinaryTree.h"
 #include "FileManager.h"
-#include "LinkedList.h"
 #include "ERF.h"
+#include <map>
 
 #define OBJECT_INVALID 0x7F000000
 void Hook();
 
-struct FileEntry{
+class FileEntry{
+
+public:
+	
+	FileEntry(){
+		memset(this, 0, sizeof(FileEntry));
+		IsArea = false;
+	}
+
+	~FileEntry(){
+		if (file)
+			nwnxfree(file);
+		if (fullpath)
+			nwnxfree(fullpath);
+
+		memset(this, 0, sizeof(FileEntry));
+	}
+
+	void nwnxfree(void * mem){
+
+		void(__cdecl *nwnx_free)(void * ptr);
+		nwnx_free = (void(__cdecl *)(void *))0x0040D560;
+
+		nwnx_free(mem);
+		if (cache)
+			nwnx_free(cache);
+	}
 
 	char * file;
 	char * fullpath;
@@ -36,6 +61,9 @@ struct FileEntry{
 	time_t Version;
 	DWORD ERFOffset;
 	DWORD ERFSize;
+	bool IsArea;
+	void * cache;
+	DWORD cachesize;
 };
 
 class CNWNXDynRes : public CNWNXBase  
@@ -59,7 +87,7 @@ public:
 	bool RemoveFile( char* Parameters );
 	bool Exists( char* Parameters );
 	void StringCopyToLower( char * dest, const char * src, int nCnt=0 );
-	BinaryTree::BTEntry * Find( const char * file );
+	FileEntry * Find(const char * file);
 	void DumpResFile( );
 	int GetFileExists( const char * file );
 	time_t GetLastWriteTime( const char * file );
@@ -70,20 +98,23 @@ public:
 	void GetFirstNextArea( char * param );
 	void SetFilter( char * param );
 	bool IsInFilter( const char * ext );
-	int CacheFile( const char * file );
+	int CacheFile(const char * file, bool dolog = true);
 	void GetFirstNextFileInCapsule( char * param, bool first );
 	void ExtractFromCapsule( char * param );
 	char * GetFileNameFromKey( KeyEntry * key, char * buffer );
-
+	long GetFileSize(const char * fullFile);
+	size_t GetFileListSize();
 
 	FILE * LoadList;
 	int logz;
 	CNWNXMemory mem;
 	CFileManager FM;
 
-	BinaryTree * FileLL;
-	LinkedList * ERFList;
-	LinkedList * AreaList;
+	std::map<FileEntry*,DWORD> FileList;
+	std::map<char *,size_t> CapsuleList;
+
+	std::map<FileEntry*, DWORD>::iterator FirstNext;
+	std::map<FileEntry*, DWORD>::iterator AreaIterator;
 
 	void * LastExists;
 	char * filter;

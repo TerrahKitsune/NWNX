@@ -25,7 +25,7 @@
 #define _NX_NWN_STRUCT_CLASTUPDATEOBJECT_
 
 struct CLastUpdateObject_s {
-    void               *unknown;
+	unsigned char unknown[0x170];
 };
 
 #endif /* _NX_NWN_STRUCT_CLASTUPDATEOBJECT_ */

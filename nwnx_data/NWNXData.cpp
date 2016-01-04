@@ -32,7 +32,7 @@ BOOL CNWNXData::OnCreate(const char* LogDir){
 		return false;
 
 	WriteLogHeader( );
-
+	HookFuncs();
 	DOArray=NULL;
 	DOArrayLen=0;
 	LastObject=NULL;
@@ -42,7 +42,7 @@ BOOL CNWNXData::OnCreate(const char* LogDir){
 
 void CNWNXData::WriteLogHeader( ){
 
-	fprintf( m_fFile, "NWNXData v0.1 created by Terra_777\n\n" );
+	fprintf( m_fFile, "NWNXData v0.2 created by Terra_777\n\n" );
 	fflush( m_fFile );	
 }
 

@@ -21,7 +21,14 @@
 #include "../NWNXdll/NWNXBase.h"
 #include "CSQLite.h"
 
+#include "../NWSERVER/types.h"
+#include "../NWNXdll/NWNXBase.h"
+
+#include "Aurora.h"
+
 #define OBJECT_INVALID 0x7F000000
+
+void HookFuncs();
 
 struct DataObject{
 
@@ -58,6 +65,8 @@ public:
 	bool SQLiteExec( char * input, int nFetch );
 	bool SQLiteStep( char * input );
 	bool SQLiteGet( char * input );
+
+	CNWNXMemory mem;
 
 protected:
 

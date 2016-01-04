@@ -17,6 +17,7 @@
 #include "NWNXEffects.h"
 #include "../NWNXdll/madCHook.h"
 #include "../NWNXdll/IniFile.h"
+#include <math.h>
 
 #pragma comment(lib, "madChook.lib")
 
@@ -126,6 +127,9 @@ int __fastcall CNWVirtualMachineCommands__ExecuteCommandGetEffectDurationTyp( vo
 				nData = effects.last;
 			else if( Order == 5 )
 				nData = eEffect->GetInteger( effects.param );
+			else if (Order == 6){
+				nData = nearbyint(eEffect->eff_duration);
+			}
 
 			if( (*NWN_VirtualMachine)->StackPushInteger( nData ) ){
 
@@ -246,7 +250,7 @@ BOOL CNWNXEffects::OnCreate(const char* LogDir){
 
 void CNWNXEffects::WriteLogHeader( ){
 
-	fprintf( m_fFile, "NWNXEffects v1.2 created by Terra_777\n\n" );
+	fprintf( m_fFile, "NWNXEffects v1.3 created by Terra_777\n\n" );
 	fflush( m_fFile );
 }
 
@@ -356,6 +360,9 @@ char* CNWNXEffects::OnRequest(char *gameObject, char* Request, char* Parameters)
 
 		param = atoi( Parameters );		
 		Order=5;
+	}
+	else if (strcmp(Request, "GetDuration") == 0){
+		Order = 6;
 	}
 	else if( strcmp( Request, "GetUAC" ) == 0 ){
 

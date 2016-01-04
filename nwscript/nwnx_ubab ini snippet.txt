@@ -1,0 +1,8 @@
+;1 based array of basetypes that works with ubab, this one includes qstaff
+[UBAB]
+1=15
+2=36
+3=40
+4=50
+5=78
+6=256

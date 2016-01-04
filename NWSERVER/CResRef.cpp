@@ -20,4 +20,6 @@ CResRef * CResRef::Set( const char * text ){
 		else
 			resref[n]=tolower( text[n] );
 	}
+
+	return this;
 }

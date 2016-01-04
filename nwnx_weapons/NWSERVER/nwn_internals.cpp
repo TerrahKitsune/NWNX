@@ -25,8 +25,8 @@ void			(__fastcall *CNWSCreature__SetQuickbarButton_GeneralINTParam)(CNWSCreatur
 void			(__fastcall *CNWSCreature__SetQuickbarButton_GeneralNoParam)(CNWSCreature*, void*, uint8_t, uint8_t) = (void (__fastcall *)(CNWSCreature*, void*, uint8_t, uint8_t))0x004A91B0;
 */
 
-int 			(__fastcall *CExoArrayList_uint32___Add)(void *, void *, uint32_t a2) = (int (__fastcall *)(void *, void *, uint32_t a2))0x0048F480;
-void 			(__fastcall *CExoArrayList_uint32___Remove)(void *, void *, unsigned long) = (void (__fastcall *)(void *, void *, unsigned long))0x004D0D50;
+int(__fastcall *CExoArrayList_uint32___Add)(void *, uint32_t, uint32_t a2) = (int(__fastcall *)(void *, uint32_t, uint32_t a2))0x0048F480;
+void(__fastcall *CExoArrayList_uint32___Remove)(void *, uint32_t, unsigned long) = (void(__fastcall *)(void *, uint32_t, unsigned long))0x004D0D50;
 
 void			(__fastcall *CNWMessage__CreateWriteMessage)(CNWSMessage*, void*, uint32_t, nwn_objid_t, uint32_t) = (void (__fastcall *)(CNWSMessage*, void*, uint32_t, nwn_objid_t, uint32_t))0x00507E30;
 int				(__fastcall *CNWMessage__GetWriteMessage)(CNWSMessage*, void*, uint8_t**, uint64_t*) = (int (__fastcall *)(CNWSMessage*, void*, uint8_t**, uint64_t*))0x00508B80;

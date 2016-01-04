@@ -20,6 +20,11 @@ void 			(__thiscall *CNWSObject__SetPosition)(CNWSObject *pTHIS, Vector v, int a
 void 			(__thiscall *CNWSObject__SetOrientation)(CNWSObject *pTHIS, Vector v) = (void(__thiscall*)(CNWSObject *pTHIS, Vector v))0x004E25B0;
 void *			(__thiscall *CNWSObject__BroadcastDialog)(CNWSObject *pTHIS, CExoString Msg, float Max_Distance) = (void*(__thiscall*)(CNWSObject *pTHIS, CExoString Msg, float Max_Distance))0x004E54B0;
 int				(__thiscall *CNWSObject__RemoveEffect)( CNWSObject *pThis, CGameEffect * eff ) = (int(__thiscall*)( CNWSObject *,CGameEffect*))0x004E2CE0;
+CScriptLocation*(__thiscall *CNWSObject__GetScriptLocation)(CNWSObject *pThis, CScriptLocation*in) = (CScriptLocation*(__thiscall*)(CNWSObject *, CScriptLocation*))0x004E5930;
+
+CScriptLocation * CNWSObject_s::GetScriptLocation(CScriptLocation * in){
+	return CNWSObject__GetScriptLocation(this, in);
+}
 
 int CNWSObject_s::RemoveEffect( CGameEffect * eff ){
 

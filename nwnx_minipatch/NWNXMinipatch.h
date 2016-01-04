@@ -20,6 +20,7 @@
 
 #include "../NWSERVER/types.h"
 #include "../NWNXdll/NWNXBase.h"
+#include "nwnx_memory.h"
 
 #define OBJECT_INVALID 0x7F000000
 
@@ -40,6 +41,20 @@ public:
 	void RemoveChatListenRestrictions( );
 	void RemoveSetStacksizeCap( void );
 	void TrueSightNoStealth();
+	void SpotBonusForTS();
+
+	void RegisterMalloc(void *mem, size_t size);
+	bool CheckFree(void *mem);
+
+	CNWNXMemory mem;
+	CExoString * ECLVar;
+	CExoString * RangeVar;
+	CExoString * AoOEvent;
+	CExoString * AoOLocOjb;
+	CExoString * AoOLocInt;
+	bool inScript;
+
+	time_t lastturd;
 
 protected:
 

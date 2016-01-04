@@ -14,6 +14,12 @@ int (__thiscall * CNWMessage__WriteBYTE)( void *pTHIS, BYTE b, int flag ) = (int
 int (__thiscall * CNWMessage__WriteDWORD)( void *pTHIS, DWORD dw, int flag ) = (int (__thiscall *)( void *, DWORD , int))0x00508450;
 int (__thiscall * CNWMessage__WriteVOIDPtr)( void *pTHIS, void * ptr, DWORD size) = (int (__thiscall *)( void *, void* , DWORD))0x00508AD0;
 
+int(__stdcall *CNWMessage__WriteBOOL)(int a1) = (int(__stdcall *)(int))0x00507FC0;
+
+int	CNWMessage_s::WriteBool(int nbool){
+	return CNWMessage__WriteBOOL(nbool);
+}
+
 CNWMessage * NWNX_CreateMessage( int nLen ){
 
 	CNWNXMemory mem;

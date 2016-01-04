@@ -192,6 +192,9 @@
     <ClCompile Include="..\NWSERVER\CNWSEncounter.cpp">
       <Filter>NWSERVER</Filter>
     </ClCompile>
+    <ClCompile Include="nwnx_memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NWNXMinipatch.h">
@@ -501,6 +504,9 @@
       <Filter>NWSERVER</Filter>
     </ClInclude>
     <ClInclude Include="..\NWNXdll\NWNXBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nwnx_memory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

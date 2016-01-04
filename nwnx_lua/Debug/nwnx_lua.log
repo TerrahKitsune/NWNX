@@ -1,10 +1,5 @@
-﻿Build started 2013-11-10 22:54:46.
-     1>Project "\\terrahnet\Terra\nwnx\nwnx_lua\nwnx_lua.vcxproj" on node 2 (ClCompile target(s)).
-     1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt NWNLuaLib.cpp
-         NWNLuaLib.cpp
-     1>Done Building Project "\\terrahnet\Terra\nwnx\nwnx_lua\nwnx_lua.vcxproj" (ClCompile target(s)).
+﻿Build started 2015-09-26 14:31:58.
 
 Build succeeded.
 
-Time Elapsed 00:00:01.79
+Time Elapsed 00:00:02.41
